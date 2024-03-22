@@ -4,7 +4,7 @@ public class SpellCaster : MonoBehaviour
 {
     public bool cast = true;
     
-    public int mana;
+    public int mana = 100;
     
     public Spell[] spells;
     [Min(0.1f)]
