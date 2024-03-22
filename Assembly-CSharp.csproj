@@ -1,18 +1,24 @@
-﻿<Project ToolsVersion="Current" Sdk="Microsoft.NET.Sdk">
-  <!-- Generated file, do not modify, your changes will be overwritten (use AssetPostprocessor.OnGeneratedCSProject) -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <EnableDefaultItems>false</EnableDefaultItems>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <LangVersion>9.0</LangVersion>
-    <Configurations>Debug;Release</Configurations>
+    <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
+    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
+    <ProjectGuid>{769e748d-c8fb-3263-2d5d-13cb274484ae}</ProjectGuid>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -23,98 +29,78 @@
     <DefineConstants>UNITY_2022_3_12;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
+    <NoWarn>0169,0649</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>Temp\bin\Release\</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
-    <NoStandardLibraries>true</NoStandardLibraries>
-    <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-    <MSBuildWarningsAsMessages>MSB3277</MSBuildWarningsAsMessages>
-  </PropertyGroup>
-  <PropertyGroup>
-    <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.21</UnityProjectGeneratorVersion>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2022.3.12f1</UnityVersion>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\goros_360ojgq\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Feya.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCs\PuzzleNPC.cs" />
     <Compile Include="Assets\KOSTIK\Scr\C.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Boss.cs" />
+    <Compile Include="Assets\Scripts\SpellCaster.cs" />
+    <Compile Include="Assets\Scripts\Spell\Spell.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\StatueMovementController.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\StatuePuzzle.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Attacking.cs" />
+    <Compile Include="Assets\Scripts\Spell\Spells\SoulArrow.cs" />
     <Compile Include="Assets\KOSTIK\Scr\BossAnimationHELPER.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
-    <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-    <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-    <Compile Include="Assets\KOSTIK\Scr\Goblin.cs" />
-    <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\CartoonFX Free.txt" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster FREE.txt" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
-    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Scripts\NPC\NPCs\PuzzleNPC.cs" />
-    <Compile Include="Assets\Scripts\SpellCaster.cs" />
-    <Compile Include="Assets\Scripts\Spell\Spell.cs" />
-    <Compile Include="Assets\Scripts\Puzzle\StatueMovementController.cs" />
-    <Compile Include="Assets\Scripts\Puzzle\StatuePuzzle.cs" />
-    <Compile Include="Assets\Scripts\Spell\Spells\SoulArrow.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCTrigger.cs" />
     <Compile Include="Assets\Scripts\Pusher.cs" />
+    <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC.cs" />
+    <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\Goblin.cs" />
+    <Compile Include="Assets\Scripts\Spell\Spells\Lightning.cs" />
+    <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCText.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Graphics\Shaders\Pixelation.shader" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\CartoonFX Free.txt" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster FREE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
@@ -738,134 +724,157 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Cyanilux.BlitRenderFeature">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Updater">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="PPv2URPConverters">
-      <HintPath>Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Cyanilux.BlitRenderFeature.Editor">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="KinoBloom.Runtime.csproj" />
-    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj" />
-    <ProjectReference Include="CFXRDemo.csproj" />
-    <ProjectReference Include="CFXRRuntime.csproj" />
-    <ProjectReference Include="CFXREditor.csproj" />
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{d29018c6-9d11-f2f4-b33c-107a25999def}</Project>
+      <Name>KinoBloom.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{428ed253-41bb-42ea-67c3-8c97349fb8e8}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRDemo.csproj">
+      <Project>{cd10ad89-f5f4-963a-0ef3-14728d9a741f}</Project>
+      <Name>CFXRDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRRuntime.csproj">
+      <Project>{ef45b0f1-01c2-dcdf-e6cc-ab8aba7c0aae}</Project>
+      <Name>CFXRRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{47dc7bc8-e064-b964-01e9-394916dc6d2b}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

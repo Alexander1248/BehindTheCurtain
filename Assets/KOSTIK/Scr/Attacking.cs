@@ -13,6 +13,12 @@ public class Attacking : MonoBehaviour
     [SerializeField] private GameObject lightning;
     [SerializeField] private float speedBolt;
     [SerializeField] private float distThrow;
+    private Transform _root;
+
+    public Transform Root
+    {
+        set => _root = value;
+    }
 
     void Start(){
         //InvokeRepeating("Hit", kulakKD, kulakKD);
@@ -25,11 +31,7 @@ public class Attacking : MonoBehaviour
         handAnimator.CrossFade("HITV2", 0.1f);
     }
 
-    void Update(){
-        if (Input.GetMouseButtonUp(0)) throwLightning();
-    }
-
-    void throwLightning(){
+    public void throwLightning(){
         if (!handAnimator.enabled) {
             handAnimator.enabled = true;
             handAnimator.Play("ThrowC", 0, 0);
@@ -66,7 +68,7 @@ public class Attacking : MonoBehaviour
         Invoke("SpawnLightning", timerespawn);
     }
     void SpawnLightning(){
-        lightning = Instantiate(lightningPref, lightningSpawPoint);
+        lightning = Instantiate(lightningPref, lightningSpawPoint, _root);
         lightning.transform.localPosition = Vector3.zero;
         lightning.transform.localEulerAngles = Vector3.zero;
     }
