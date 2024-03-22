@@ -10,10 +10,11 @@ public class Lightning : Spell
     {
         base.Awake();
         _root = GameObject.Find("Spells").transform;
+        attacking.Root = _root;
     }
 
     public override void Cast(Vector3 position, Quaternion rotation)
     {
-        
+        attacking.throwLightning();
     }
 }

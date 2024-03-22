@@ -22,8 +22,11 @@ public class SpellCaster : MonoBehaviour
     public void Update()
     {
         _spellIndex += Input.mouseScrollDelta.y * scrollSpeed;
-        if (!Input.GetMouseButton(1)) return;
-        
+        if (!Input.GetMouseButton(0)) return;
+        if (_spellIndex < 0) _spellIndex += spells.Length;
+        if (_spellIndex >= spells.Length) _spellIndex -= spells.Length;
+                
+                
         var spell = spells[(int) _spellIndex];
         if (mana < spell.manaCost) return; 
         if (Time.fixedTime - spell.Timer < spell.cooldown) return;
