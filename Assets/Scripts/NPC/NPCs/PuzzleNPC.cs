@@ -16,7 +16,7 @@ public class PuzzleNPC : NPC
         switch (line)
         {
             case 0:
-                caster.cast = false;
+                caster.enabled = false;
                 player.movementEnabled = false;
                 player.lockCamera = true;
                 player.lockReturnSpeed = 0.05f;
@@ -42,7 +42,7 @@ public class PuzzleNPC : NPC
     {
         player.movementEnabled = true;
         player.lockCamera = false;
-        caster.cast = true;
+        caster.enabled = true;
         
         puzzle.enabled = true;
         controller.enabled = true;

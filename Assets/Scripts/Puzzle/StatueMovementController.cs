@@ -25,7 +25,7 @@ public class StatueMovementController : MonoBehaviour
                 GameObject obj = _hits[i].collider.gameObject;
                 if (obj.CompareTag("Statue"))
                 {
-                    caster.cast = false;
+                    caster.enabled = false;
                     controller.movementEnabled = false;
                     _statue = obj;
                     _source = _statue.GetComponent<AudioSource>();
@@ -39,7 +39,7 @@ public class StatueMovementController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _statue = null;
-            caster.cast = true;
+            caster.enabled = true;
             controller.lockCamera = false;
             controller.movementEnabled = true;
             if (_source) _source.Stop();
