@@ -2733,6 +2733,7 @@ MonoBehaviour:
   controller: {fileID: 1836562181}
   puzzle: {fileID: 1333632261}
   player: {fileID: 1836562179}
+  caster: {fileID: 1836562180}
 --- !u!1 &2062391229
 GameObject:
   m_ObjectHideFlags: 0

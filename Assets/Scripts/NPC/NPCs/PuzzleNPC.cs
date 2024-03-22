@@ -8,15 +8,18 @@ public class PuzzleNPC : NPC
     [Space]
     public Controller player;
 
+    public SpellCaster caster;
+
     protected override void OnTextLine(int line)
     {
         Vector3 delta;
         switch (line)
         {
             case 0:
+                caster.cast = false;
                 player.movementEnabled = false;
                 player.lockCamera = true;
-                player.lockReturnSpeed = 0.1f;
+                player.lockReturnSpeed = 0.05f;
                 
                 delta = (transform.position - player.transform.position).normalized;
                 player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
@@ -39,6 +42,7 @@ public class PuzzleNPC : NPC
     {
         player.movementEnabled = true;
         player.lockCamera = false;
+        caster.cast = true;
         
         puzzle.enabled = true;
         controller.enabled = true;
