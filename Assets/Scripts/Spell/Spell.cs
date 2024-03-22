@@ -2,12 +2,21 @@
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(fileName = "Spell")]
-public class Spell : ScriptableObject
+public abstract class Spell : MonoBehaviour
 {
-    public GameObject prefab;
     public int manaCost;
-    
-    
+    public float cooldown;
+    private float _timer;
+    public float Timer
+    {
+        get => _timer;
+        set => _timer = value;
+    }
 
+    protected void Awake()
+    {
+        _timer = cooldown;
+    }
+
+    public abstract void Cast(Vector3 position, Quaternion rotation);
 }
