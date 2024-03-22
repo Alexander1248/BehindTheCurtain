@@ -48,9 +48,11 @@
     <Compile Include="Assets\Scripts\SpellCaster.cs" />
     <Compile Include="Assets\Scripts\Controlller.cs" />
     <Compile Include="Assets\Scripts\Spell\Spell.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\StatuePuzzle.cs" />
+    <Compile Include="Assets\Scripts\Puzzle\StatueMovementController.cs" />
     <Compile Include="Assets\Scripts\Spell\Spells\SoulArrow.cs" />
     <Compile Include="Assets\Scripts\Pusher.cs" />
+    <None Include="Assets\Graphics\Shaders\Pixelation.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -747,11 +749,11 @@
     <Reference Include="PPv2URPConverters">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="Cyanilux.BlitRenderFeature.Editor">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>

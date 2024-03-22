@@ -40,6 +40,7 @@ public class Controller : MonoBehaviour
     private Vector2 _rotation = Vector2.zero;
     private const string XAxis = "Mouse X";
     private const string YAxis = "Mouse Y";
+
     private void Update()
     {
         _rotation.x += Input.GetAxis(XAxis) * sensitivity;
@@ -90,6 +91,8 @@ public class Controller : MonoBehaviour
             _rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
             _inJump = true;
         }
+
+        
     }
 
     private void OnCollisionEnter(Collision other)

@@ -307,11 +307,11 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="unityplastic">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
@@ -790,11 +790,11 @@
     <Reference Include="PPv2URPConverters">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="Cyanilux.BlitRenderFeature.Editor">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
