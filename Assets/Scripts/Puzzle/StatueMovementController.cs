@@ -2,13 +2,18 @@
 
 public class StatueMovementController : MonoBehaviour
 {
+    [Range(0.1f, 9f)]
+    public float sensetivity = 1;
     public Controller controller;
     public SpellCaster caster;
+    [Space] 
     
     private RaycastHit[] _hits = new RaycastHit[2];
     private GameObject _statue;
+    private AudioSource _source;
     
     
+    private const string XAxis = "Mouse X";
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -21,8 +26,10 @@ public class StatueMovementController : MonoBehaviour
                 if (obj.CompareTag("Statue"))
                 {
                     caster.cast = false;
-                    controller.movementEnabled = true;
+                    controller.movementEnabled = false;
                     _statue = obj;
+                    _source = _statue.GetComponent<AudioSource>();
+                    if (_source) _source.Play();
                     return;
                 }
             }
@@ -35,18 +42,15 @@ public class StatueMovementController : MonoBehaviour
             caster.cast = true;
             controller.lockRotation = false;
             controller.movementEnabled = true;
+            if (_source) _source.Stop();
             return;
         }
 
-        if (_statue && Input.GetMouseButton(0))
-        {
-            Vector3 delta = (_statue.transform.position - transform.position).normalized;
-            controller.lockRotation = true;
-            controller.lockAngles = new Vector2(
-                Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg,
-                0);
-            
-            
-        }
+        if (!_statue || !Input.GetMouseButton(0)) return;
+        Vector3 delta = (_statue.transform.position - transform.position).normalized;
+        controller.lockRotation = true;
+        controller.lockReturnSpeed = 1;
+        controller.lockAngle = new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
+        _statue.transform.Rotate(Vector3.up, -Input.GetAxis(XAxis) * sensetivity);
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEditor.UIElements;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class Controller : MonoBehaviour
     public float yRotationLimit = 88f;
 
     public bool lockRotation;
-    public Vector2 lockAngles = Vector2.zero;
+    public Vector2 lockAngle = Vector2.zero;
     
     [Min(0.01f)]
     public float lockReturnSpeed = 0.1f;
@@ -47,8 +45,21 @@ public class Controller : MonoBehaviour
         _rotation.y += Input.GetAxis(YAxis) * sensitivity;
         _rotation.y = Mathf.Clamp(_rotation.y, -yRotationLimit, yRotationLimit);
         if (lockRotation)
-            _rotation = Vector2.Lerp(_rotation, lockAngles, lockReturnSpeed);
-        
+        {
+            // TODO: May be exists better solution?
+            if (Mathf.Abs(_rotation.x - lockAngle.x) > Mathf.Abs(_rotation.x + 360 - lockAngle.x))
+                _rotation.x += 360;
+            else if (Mathf.Abs(_rotation.x - lockAngle.x) > Mathf.Abs(_rotation.x - 360 - lockAngle.x))
+                _rotation.x -= 360;
+            
+            if (Mathf.Abs(_rotation.y - lockAngle.y) > Mathf.Abs(_rotation.y + 360 - lockAngle.y))
+                _rotation.y += 360;
+            else if (Mathf.Abs(_rotation.y - lockAngle.y) > Mathf.Abs(_rotation.y - 360 - lockAngle.y))
+                _rotation.y -= 360;
+
+            _rotation = Vector2.Lerp(_rotation, lockAngle, lockReturnSpeed);
+        }
+
         camera.transform.localRotation = Quaternion.AngleAxis(_rotation.y, Vector3.left);
         transform.localRotation = Quaternion.AngleAxis(_rotation.x, Vector3.up);
         
