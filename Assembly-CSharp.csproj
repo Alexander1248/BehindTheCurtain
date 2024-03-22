@@ -45,7 +45,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\SpellCaster.cs" />
+    <Compile Include="Assets\Scripts\Controlller.cs" />
+    <Compile Include="Assets\Scripts\Spell\Spell.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Spell\Spells\SoulArrow.cs" />
+    <Compile Include="Assets\Scripts\Pusher.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -727,6 +732,9 @@
     <Reference Include="Unity.Timeline">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="Cyanilux.BlitRenderFeature">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
@@ -741,6 +749,9 @@
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Cyanilux.BlitRenderFeature.Editor">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
