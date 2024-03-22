@@ -2,7 +2,9 @@
 
 public class SpellCaster : MonoBehaviour
 {
-    public int mana;
+    public bool cast = true;
+    
+    public int mana = 100;
     
     public Spell[] spells;
     [Min(0.1f)]
@@ -20,6 +22,7 @@ public class SpellCaster : MonoBehaviour
 
     public void Update()
     {
+        if (!cast) return;
         _spellIndex += Input.mouseScrollDelta.y * scrollSpeed;
         if (!Input.GetMouseButton(1)) return;
         
