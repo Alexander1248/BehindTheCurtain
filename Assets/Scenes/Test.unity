@@ -435,7 +435,7 @@ Transform:
   m_GameObject: {fileID: 101221296}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08987599, y: -0, z: -0, w: 0.99595296}
-  m_LocalPosition: {x: 0.048, y: -0.6787306, z: 35.334827}
+  m_LocalPosition: {x: 0.27, y: 0.13, z: 0.3}
   m_LocalScale: {x: 0.19999999, y: 0.19999993, z: 0.19999993}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 1
   cooldown: 0
-  prefab: {fileID: 2039331364983557222, guid: 9718e5a6b9ddcee42ac91935318e7d17, type: 3}
+  prefab: {fileID: 2039331364983557222, guid: 4427a2cbfa65c8a4abef3d3ff5fe3569, type: 3}
 --- !u!1 &442084309
 GameObject:
   m_ObjectHideFlags: 0
@@ -5234,7 +5234,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -5306,6 +5306,7 @@ MonoBehaviour:
   - {fileID: 441583315}
   - {fileID: 1545015403}
   scrollSpeed: 1
+  _spellIndex: 0
 --- !u!114 &1836562181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6992,9 +6993,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1836562178}
   - {fileID: 646786509}
   - {fileID: 259077918}
-  - {fileID: 1836562178}
   - {fileID: 1915580044}
   - {fileID: 1325666383}
   - {fileID: 489294352}

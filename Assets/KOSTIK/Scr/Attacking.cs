@@ -32,39 +32,44 @@ public class Attacking : MonoBehaviour
     }
 
     public void throwLightning(){
-        if (!handAnimator.enabled) {
-            handAnimator.enabled = true;
-            handAnimator.Play("ThrowC", 0, 0);
-        }
-        handAnimator.Play("ThrowC", 0, 0);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Vector3 dir = Vector3.zero;
-        if (Physics.Raycast(ray, out hit, 100))
+        if (lightning)
         {
-            dir = -lightning.transform.position + hit.point;
-            lightning.GetComponent<C>().getDirection(dir.normalized, speedBolt);
-        }
-        else{
-            dir = ray.origin + ray.direction * 100;
-            lightning.GetComponent<C>().getDirection(dir.normalized, speedBolt);
-        }
-        lightning.transform.forward = dir.normalized;
+            if (!handAnimator.enabled)
+            {
+                handAnimator.enabled = true;
+                handAnimator.Play("ThrowC", 0, 0);
+            }
 
+            handAnimator.Play("ThrowC", 0, 0);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Vector3 dir = Vector3.zero;
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                dir = -lightning.transform.position + hit.point;
+                lightning.GetComponent<C>().getDirection(dir.normalized, speedBolt);
+            }
+            else
+            {
+                dir = ray.origin + ray.direction * 100;
+                lightning.GetComponent<C>().getDirection(dir.normalized, speedBolt);
+            }
 
+            lightning.transform.forward = dir.normalized;
+        }
+        
         // мне похуй паркуюсь где хочу я быдло
         float timerespawn = 0;
         AnimationClip[] clips = handAnimator.runtimeAnimatorController.animationClips;
-        foreach(AnimationClip clip in clips)
+        foreach (AnimationClip clip in clips)
         {
-            switch(clip.name)
+            switch (clip.name)
             {
                 case "ThrowC":
                     timerespawn = clip.length;
                     break;
             }
         }
-
         Invoke("SpawnLightning", timerespawn);
     }
     void SpawnLightning(){

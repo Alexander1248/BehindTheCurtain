@@ -10,7 +10,7 @@ public class SpellCaster : MonoBehaviour
     public float scrollSpeed;
     
     
-    private float _spellIndex;
+    public float _spellIndex;
 
     private Camera _camera;
     private void Start()
@@ -23,10 +23,9 @@ public class SpellCaster : MonoBehaviour
     {
         _spellIndex += Input.mouseScrollDelta.y * scrollSpeed;
         if (!Input.GetMouseButton(0)) return;
-        if (_spellIndex < 0) _spellIndex += spells.Length;
-        if (_spellIndex >= spells.Length) _spellIndex -= spells.Length;
-                
-                
+        while (_spellIndex < 0) _spellIndex += spells.Length;
+        while (_spellIndex >= spells.Length) _spellIndex -= spells.Length;
+        
         var spell = spells[(int) _spellIndex];
         if (mana < spell.manaCost) return; 
         if (Time.fixedTime - spell.Timer < spell.cooldown) return;
