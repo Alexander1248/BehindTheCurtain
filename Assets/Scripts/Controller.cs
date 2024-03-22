@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Controller : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Controller : MonoBehaviour
     [Range(0f, 90f)]
     public float yRotationLimit = 88f;
 
-    public bool lockRotation;
+    [FormerlySerializedAs("lockRotation")] public bool lockCamera;
     public Vector2 lockAngle = Vector2.zero;
     
     [Min(0.01f)]
@@ -41,10 +42,7 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
-        _rotation.x += Input.GetAxis(XAxis) * sensitivity;
-        _rotation.y += Input.GetAxis(YAxis) * sensitivity;
-        _rotation.y = Mathf.Clamp(_rotation.y, -yRotationLimit, yRotationLimit);
-        if (lockRotation)
+        if (lockCamera)
         {
             // TODO: May be exists better solution?
             if (Mathf.Abs(_rotation.x - lockAngle.x) > Mathf.Abs(_rotation.x + 360 - lockAngle.x))
@@ -58,6 +56,12 @@ public class Controller : MonoBehaviour
                 _rotation.y -= 360;
 
             _rotation = Vector2.Lerp(_rotation, lockAngle, lockReturnSpeed);
+        }
+        else
+        {
+            _rotation.x += Input.GetAxis(XAxis) * sensitivity;
+            _rotation.y += Input.GetAxis(YAxis) * sensitivity;
+            _rotation.y = Mathf.Clamp(_rotation.y, -yRotationLimit, yRotationLimit);
         }
 
         camera.transform.localRotation = Quaternion.AngleAxis(_rotation.y, Vector3.left);

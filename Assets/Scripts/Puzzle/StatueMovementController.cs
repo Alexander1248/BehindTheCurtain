@@ -40,7 +40,7 @@ public class StatueMovementController : MonoBehaviour
         {
             _statue = null;
             caster.cast = true;
-            controller.lockRotation = false;
+            controller.lockCamera = false;
             controller.movementEnabled = true;
             if (_source) _source.Stop();
             return;
@@ -48,7 +48,7 @@ public class StatueMovementController : MonoBehaviour
 
         if (!_statue || !Input.GetMouseButton(0)) return;
         Vector3 delta = (_statue.transform.position - transform.position).normalized;
-        controller.lockRotation = true;
+        controller.lockCamera = true;
         controller.lockReturnSpeed = 1;
         controller.lockAngle = new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
         _statue.transform.Rotate(Vector3.up, -Input.GetAxis(XAxis) * sensetivity);

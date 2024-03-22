@@ -526,7 +526,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591072579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 1363353069}
   - component: {fileID: 1363353068}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2333,7 +2333,7 @@ Transform:
   m_GameObject: {fileID: 1836562174}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.184, z: 0}
+  m_LocalPosition: {x: 0, y: 1.184, z: -45.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2356,7 +2356,7 @@ MonoBehaviour:
   camera: {fileID: 2091720895}
   sensitivity: 4.87
   yRotationLimit: 88
-  lockRotation: 0
+  lockCamera: 0
   lockAngle: {x: 0, y: 0}
   lockReturnSpeed: 0.1
   speed: 10
@@ -2694,15 +2694,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007502238}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.92, y: 0.00000047683716, z: -27.5}
+  m_LocalRotation: {x: -0, y: -0.7109628, z: -0, w: 0.7032296}
+  m_LocalPosition: {x: -9.22, y: 0.00000047683716, z: -27.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 432739961}
   - {fileID: 2062391230}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.627, z: 0}
 --- !u!114 &2007502241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2717,17 +2717,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 591072580}
   text:
-  - text: Text 1
+  - text: "\u042D\u0439 \u043F\u0443\u0442\u043D\u0438\u043A! \u041F\u043E\u043C\u043E\u0433\u0438
+      \u043C\u043D\u0435."
     printingTime: 1
     waitTime: 1
-  - text: Text 2
-    printingTime: 1
+  - text: "\u0412\u0438\u0434\u0438\u0448\u044C \u0432\u043F\u0435\u0440\u0435\u0434\u0438
+      \u0430\u043B\u0442\u0430\u0440\u044C \u0441\u043E \u0441\u0442\u0430\u0442\u0443\u044F\u043C\u0438?"
+    printingTime: 3
     waitTime: 1
-  - text: Text 3
-    printingTime: 1
+  - text: "\u041F\u043E\u0432\u0435\u0440\u043D\u0438 \u0438\u0445 \u0433\u043E\u043B\u043E\u0432\u044B
+      \u0432 \u0442\u0443 \u0441\u0442\u043E\u0440\u043E\u043D\u0443, \u0430 \u044F
+      \u043E\u0442\u043A\u0440\u043E\u044E \u0434\u0432\u0435\u0440\u044C."
+    printingTime: 4
     waitTime: 1
   controller: {fileID: 1836562181}
   puzzle: {fileID: 1333632261}
+  player: {fileID: 1836562179}
 --- !u!1 &2062391229
 GameObject:
   m_ObjectHideFlags: 0
