@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\NPC\NPC.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Goblin.cs" />
+    <Compile Include="Assets\Scripts\Spell\Spells\Lightning.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCText.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

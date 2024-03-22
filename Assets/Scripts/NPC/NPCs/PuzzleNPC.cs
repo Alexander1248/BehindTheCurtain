@@ -35,7 +35,6 @@ public class PuzzleNPC : NPC
                 player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
                 break;
         }
-        // Если надо можно вызвать зачитывание текста, блокировку камеры и другое
     }
 
     protected override void OnDialogEnd()
