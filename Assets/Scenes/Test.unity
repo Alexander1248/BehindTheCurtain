@@ -541,8 +541,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae340913cb9450c4c8bd44c2dbfdf885, type: 2}
+  m_sharedMaterial: {fileID: -8152981642151088617, guid: ae340913cb9450c4c8bd44c2dbfdf885,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1821,6 +1822,9 @@ MonoBehaviour:
   - {fileID: 2091967811}
   statueForward: {x: 0, y: 0, z: -1}
   accurancy: 0.9
+  onSolved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1333632262
 Transform:
   m_ObjectHideFlags: 0
