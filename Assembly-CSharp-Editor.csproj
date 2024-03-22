@@ -775,6 +775,9 @@
     <Reference Include="Unity.Timeline">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="Cyanilux.BlitRenderFeature">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
@@ -789,6 +792,9 @@
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Cyanilux.BlitRenderFeature.Editor">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Cyanilux.BlitRenderFeature.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
