@@ -8,5 +8,6 @@ public class NPCTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         NPC.StartDialog();
+        Destroy(gameObject);
     }
 }
