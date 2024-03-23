@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public abstract class NPC : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public abstract class NPC : MonoBehaviour
     private float _time;
     private bool _printStep;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float[] pitchRange;
+
     private void FixedUpdate()
     {
         if (!_dialogStarted) return;
@@ -21,6 +25,10 @@ public abstract class NPC : MonoBehaviour
         if (_printStep)
         {
             container.text = text[_line].text[..(int)(text[_line].text.Length * _time /  text[_line].printingTime)];
+            if (audioSource != null && container.text.Length % 2 == 0 && !audioSource.isPlaying){
+                audioSource.pitch = Random.Range(pitchRange[0], pitchRange[1]);
+                audioSource.Play();
+            }
             if (!(_time > text[_line].printingTime)) return;
             _time = 0;
             _printStep = false;
@@ -36,6 +44,7 @@ public abstract class NPC : MonoBehaviour
                 OnDialogEnd();
                 _dialogStarted = false;
                 container.enabled = false;
+                container.text = "";
                 return;
             }
             OnTextLine(_line);
@@ -53,5 +62,6 @@ public abstract class NPC : MonoBehaviour
         _printStep = true;
         OnTextLine(_line);
         container.enabled = true;
+        container.text = "";
     }
 }

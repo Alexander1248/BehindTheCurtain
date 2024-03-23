@@ -25,7 +25,8 @@ public class StatueMovementController : MonoBehaviour
                 GameObject obj = _hits[i].collider.gameObject;
                 if (obj.CompareTag("Statue"))
                 {
-                    caster.cast = false;
+                    caster.enabled = false;
+                    controller.lockMouseActive = false;
                     controller.movementEnabled = false;
                     _statue = obj;
                     _source = _statue.GetComponent<AudioSource>();
@@ -39,8 +40,8 @@ public class StatueMovementController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _statue = null;
-            caster.cast = true;
-            controller.lockRotation = false;
+            caster.enabled = true;
+            controller.lockCamera = false;
             controller.movementEnabled = true;
             if (_source) _source.Stop();
             return;
@@ -48,8 +49,8 @@ public class StatueMovementController : MonoBehaviour
 
         if (!_statue || !Input.GetMouseButton(0)) return;
         Vector3 delta = (_statue.transform.position - transform.position).normalized;
-        controller.lockRotation = true;
-        controller.lockReturnSpeed = 1;
+        controller.lockCamera = true;
+        controller.lockReturnSpeed = 0.1f;
         controller.lockAngle = new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
         _statue.transform.Rotate(Vector3.up, -Input.GetAxis(XAxis) * sensetivity);
     }

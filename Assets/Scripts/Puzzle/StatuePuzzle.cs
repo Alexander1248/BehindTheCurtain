@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class StatuePuzzle : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class StatuePuzzle : MonoBehaviour
 
     [Space] 
     public UnityEvent onSolved;
-
 
     private void FixedUpdate()
     {
