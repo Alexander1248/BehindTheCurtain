@@ -2,15 +2,17 @@
 
 public class SpellCaster : MonoBehaviour
 {
-    
-    public int mana = 100;
+    public int maxMana = 100;
+    public int mana;
     
     public Spell[] spells;
     [Min(0.1f)]
     public float scrollSpeed;
+
+    [Space] 
+    public ManaBar bar;
     
-    
-    public float _spellIndex;
+    private float _spellIndex;
 
     private Camera _camera;
 
@@ -19,6 +21,9 @@ public class SpellCaster : MonoBehaviour
 
     private void Start()
     {
+        spells[(int)_spellIndex].Selected();
+        mana = maxMana;
+        if (bar) bar.Initialize(maxMana);
         _camera = Camera.main;
         if (!_camera) _camera = GetComponent<Controller>().camera;
     }
@@ -47,6 +52,7 @@ public class SpellCaster : MonoBehaviour
         if (Time.fixedTime - spell.Timer < spell.cooldown) return;
         
         mana -= spell.manaCost;
+        bar.Set(mana);
         spell.Timer = Time.fixedTime;
         var t = transform;
         // ReSharper disable once Unity.PerformanceCriticalCodeInvocation

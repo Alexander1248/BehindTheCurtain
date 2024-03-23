@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Feya : MonoBehaviour
 {
@@ -14,10 +15,16 @@ public class Feya : MonoBehaviour
     private bool seePlayer;
     [SerializeField] private float seeDistance;
 
+    [Space]
+    public GameObject castPref;
+    public AudioSource castSound;
+    [FormerlySerializedAs("chargeDistance")] public float castShift;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         InvokeRepeating("ChangePos", 1, 2);
+        InvokeRepeating(nameof(Attack), 1, 1);
     }
     
     void ChangePos(){
@@ -25,6 +32,16 @@ public class Feya : MonoBehaviour
         offset = dir * Random.Range(minRange[0], maxRange[0]) + Vector3.up * Random.Range(minRange[1], maxRange[1]);
     }
 
+    private void Attack()
+    {
+        // Attack call
+        if (!seePlayer) return;
+        
+        Instantiate(castPref, transform.position - transform.forward * castShift, 
+            Quaternion.LookRotation((player.position - transform.position).normalized));
+        castSound.Play();
+    }
+    
     void Update()
     {
         if (Vector3.Distance(transform.position, player.position) <= seeDistance){
