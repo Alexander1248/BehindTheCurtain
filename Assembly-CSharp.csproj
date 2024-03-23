@@ -51,6 +51,7 @@
     <Compile Include="Assets\KOSTIK\Scr\C.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
+    <Compile Include="Assets\Scripts\Spell\Spells\SoulArrowActor.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Boss.cs" />
     <Compile Include="Assets\Scripts\SpellCaster.cs" />
     <Compile Include="Assets\Scripts\Spell\Spell.cs" />
@@ -64,7 +65,6 @@
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCTrigger.cs" />
-    <Compile Include="Assets\Scripts\Pusher.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC.cs" />

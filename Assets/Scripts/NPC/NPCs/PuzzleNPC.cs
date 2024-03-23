@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PuzzleNPC : NPC
 {
@@ -9,6 +8,12 @@ public class PuzzleNPC : NPC
     public Controller player;
 
     public SpellCaster caster;
+
+    private void Start()
+    {
+        foreach (var t in puzzle.statues) 
+            t.transform.Rotate(Vector3.up, Random.Range(-180, 180));
+    }
 
     protected override void OnTextLine(int line)
     {
