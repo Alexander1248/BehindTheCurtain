@@ -14,7 +14,6 @@ public class StatuePuzzle : MonoBehaviour
     [Space] 
     public UnityEvent onSolved;
 
-
     private void FixedUpdate()
     {
         bool solved = true;
