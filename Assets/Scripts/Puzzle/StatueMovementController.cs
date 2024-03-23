@@ -26,6 +26,7 @@ public class StatueMovementController : MonoBehaviour
                 if (obj.CompareTag("Statue"))
                 {
                     caster.enabled = false;
+                    controller.lockMouseActive = false;
                     controller.movementEnabled = false;
                     _statue = obj;
                     _source = _statue.GetComponent<AudioSource>();

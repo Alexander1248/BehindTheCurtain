@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Controller : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class Controller : MonoBehaviour
     
     [Min(0.01f)]
     public float lockReturnSpeed = 0.1f;
+
+    public bool lockMouseActive;
     
     
     [Space]
@@ -60,12 +64,15 @@ public class Controller : MonoBehaviour
     }
 
     void camControl(){
-        _rotation.x += Input.GetAxis(XAxis) * sensitivity;
-        _rotation.y += Input.GetAxis(YAxis) * sensitivity;
-        _rotation.y = Mathf.Clamp(_rotation.y, -yRotationLimit, yRotationLimit);
 
         if (lockCamera)
         {
+            if (lockMouseActive)
+            {
+                _rotation.x += Input.GetAxis(XAxis) * sensitivity;
+                _rotation.y += Input.GetAxis(YAxis) * sensitivity;
+                _rotation.y = Mathf.Clamp(_rotation.y, -yRotationLimit, yRotationLimit);
+            }
             // TODO: May be exists better solution?
             if (Mathf.Abs(_rotation.x - lockAngle.x) > Mathf.Abs(_rotation.x + 360 - lockAngle.x))
                 _rotation.x += 360;
@@ -106,8 +113,8 @@ public class Controller : MonoBehaviour
     public void Cutscene(Vector2 rot){
         lockCamera = true;
         lockAngle = rot;
-        for(int i = 0; i < 100; i++)
-            camControl();
+        lockReturnSpeed = 1;
+        camControl();
         lockCamera = false;
         rb.isKinematic = true;
         GetComponent<Collider>().enabled = false;
@@ -120,8 +127,8 @@ public class Controller : MonoBehaviour
     public void endCS(Vector2 rot){
         lockCamera = true;
         lockAngle = rot;
-        for(int i = 0; i < 100; i++)
-            camControl();
+        lockReturnSpeed = 1;
+        camControl();
         lockCamera = false;
         rb.isKinematic = false;
         GetComponent<Collider>().enabled = true;
@@ -132,7 +139,12 @@ public class Controller : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if (!movementEnabled) return;
+        if (!movementEnabled)
+        {
+            rb.isKinematic = true;
+            return;
+        }
+        rb.isKinematic = false;
 
         Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
         targetVelocity = transform.TransformDirection(targetVelocity) * speed;
@@ -197,4 +209,5 @@ public class Controller : MonoBehaviour
         if (!other.gameObject.CompareTag("JumpReset")) return;
         _inJump = false;
     }
+
 }

@@ -4,6 +4,7 @@ public class PuzzleNPC : NPC
 {
     public StatueMovementController controller;
     public StatuePuzzle puzzle;
+    public Transform npc;
     [Space]
     public Controller player;
 
@@ -24,9 +25,10 @@ public class PuzzleNPC : NPC
                 caster.enabled = false;
                 player.movementEnabled = false;
                 player.lockCamera = true;
+                player.lockMouseActive = true;
                 player.lockReturnSpeed = 0.05f;
                 
-                delta = (transform.position - player.transform.position).normalized;
+                delta = (npc.transform.position - player.transform.position).normalized;
                 player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
                 break;
             case 1:
