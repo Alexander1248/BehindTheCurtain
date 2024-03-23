@@ -34,11 +34,17 @@ public class HidePart : MonoBehaviour
     [SerializeField] private AudioSource audioKashel;
     [SerializeField] private NPC npcDirector;
 
+    [SerializeField] private Animator animatorFadeIn;
+
     private bool played;
     private int gameStage;
 
+    [SerializeField] private GameObject womanEND;
+    [SerializeField] private NPC womanNPC;
+
     void Start(){
         GM.SetActive(false);
+        womanEND.SetActive(false);
 
         gameStage = PlayerPrefs.GetInt("gameStage", 0);
         if (gameStage == 2){
@@ -60,6 +66,25 @@ public class HidePart : MonoBehaviour
             heartbeat.Stop();
             Invoke("startCSCathc", 1.5f);
         }
+        else if (gameStage == 22){
+            player.transform.position = catchCSPos.position;
+            player.endCS(catchCSRot);
+            hidePlaces[0].tag = "Untagged";
+            hidePlaces[1].tag = "Untagged";
+            arrows[0].SetActive(false);
+            arrows[1].SetActive(false);
+            animatorDoor.enabled = false;
+            for(int i = 0; i < audioToOffOnHide.Length; i++)
+                audioToOffOnHide[i].Stop();
+            heartbeat.Stop();
+            
+            womanEND.SetActive(true);
+            Invoke("DialogWomanEnd", 1);
+        }
+    }
+
+    void DialogWomanEnd(){
+        womanNPC.StartDialog();
     }
 
     void startCSCathc(){
@@ -81,15 +106,25 @@ public class HidePart : MonoBehaviour
         animatorDoor.Play("LockedDoor", 0, 0);
     }
 
+    void stage4(){
+        SceneManager.LoadScene(3);
+    }
+
+    void stage2(){
+        PlayerPrefs.SetInt("gameStage", 6);
+        SceneManager.LoadScene(2);
+    }
+
     public void hidePlayer(int id){
         if (gameStage == 4){
-            SceneManager.LoadScene(3);
+            animatorFadeIn.Play("FadeIn", 0, 0);
+            Invoke("stage4", 2);
             return;
         }
         if (played){
             // continue
-            PlayerPrefs.SetInt("gameStage", 6);
-            SceneManager.LoadScene(2);
+            animatorFadeIn.Play("FadeIn", 0, 0);
+            Invoke("stage2", 2);
             return;
         }
         hiding.Play();

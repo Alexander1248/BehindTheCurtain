@@ -112,11 +112,9 @@ public class Controller : MonoBehaviour
     }
 
     public void Cutscene(Vector2 rot){
-        lockCamera = true;
-        lockAngle = rot;
-        lockReturnSpeed = 1;
-        camControl();
-        lockCamera = false;
+        if (rot != Vector2.zero){
+            justRotate(rot);
+        }
         rb.isKinematic = true;
         GetComponent<Collider>().enabled = false;
         movementEnabled = false;
@@ -126,17 +124,21 @@ public class Controller : MonoBehaviour
     }
 
     public void endCS(Vector2 rot){
-        lockCamera = true;
-        lockAngle = rot;
-        lockReturnSpeed = 1;
-        camControl();
-        lockCamera = false;
+        justRotate(rot);
         rb.isKinematic = false;
         GetComponent<Collider>().enabled = true;
         movementEnabled = true;
         isWalking = false;
         jumpEnabled = false;
         dashEnabled = false;
+    }
+
+    public void justRotate(Vector2 rot){
+        lockCamera = true;
+        lockAngle = rot;
+        for(int i = 0; i < 100; i++)
+            camControl();
+        lockCamera = false;
     }
 
     void FixedUpdate(){
