@@ -5,17 +5,16 @@ public class Lightning : Spell
 {
     public Attacking attacking;
     public GameObject hand;
+    public Animator animator;
 
-    private Transform _root;
     private new void Awake()
     {
         base.Awake();
-        _root = GameObject.Find("Spells").transform;
-        attacking.Root = _root;
     }
 
     public override void Selected()
     {
+        animator.enabled = false;
         hand.SetActive(true);
     }
 
