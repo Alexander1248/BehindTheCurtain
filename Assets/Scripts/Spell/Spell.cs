@@ -18,5 +18,7 @@ public abstract class Spell : MonoBehaviour
         _timer = cooldown;
     }
 
+    public abstract void Selected();
+    public abstract void Deselected();
     public abstract void Cast(Vector3 position, Quaternion rotation);
 }
