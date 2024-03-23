@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void loadFromDark0(){
         player.transform.position = playerPos.position;
-        player.GetComponent<Controller>().endCS(rotPlayer);
+        player.GetComponent<Controller>().justRotate(rotPlayer);
         invisWall.SetActive(true);
     }
 }

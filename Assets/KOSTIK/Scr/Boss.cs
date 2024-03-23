@@ -19,6 +19,7 @@ public class Boss : MonoBehaviour
     private float jumpT;
 
     [SerializeField] private float maxDistJump;
+    [SerializeField] private float hitDistance;
     
     [SerializeField] private AnimationClip[] attackClips;
     [SerializeField] private AnimationClip jumpClip;
@@ -27,6 +28,22 @@ public class Boss : MonoBehaviour
     [SerializeField] private Transform hitParticlesPOS;
 
     [SerializeField] private ParticleSystem[] LnRSword;
+
+    [SerializeField] private MilkShake.ShakePreset shakePresetLand;
+
+
+    [SerializeField] private DeathManager deathManager;
+    [SerializeField] private AudioSource music;
+    [SerializeField] private AudioSource deathSound;
+    [SerializeField] private AudioSource deathSound_MY;
+    private bool killed;
+
+
+    [SerializeField] private AudioClip[] clipsWalk;
+    [SerializeField] private AudioSource audioSource_walk;
+
+    [SerializeField] private AudioClip[] clipsSFX;
+    [SerializeField] private AudioSource audioSource_sfx;
 
     void Start(){
         player = GameObject.FindWithTag("Player").transform;
@@ -51,13 +68,38 @@ public class Boss : MonoBehaviour
     }
 
     void HitAgain(){
+        if (Vector3.Distance(transform.position, player.position) > hitDistance){
+            animator.CrossFade("Walk", 0.2f);
+            state = "Run";
+            audioSource_walk.clip = clipsWalk[0];
+            audioSource_walk.Play();
+            return;
+        }
         int id = Random.Range(0, attackClips.Length);
         animator.CrossFade(attackClips[id].name, 0.2f);
         Invoke("HitAgain", attackClips[id].length);
     }
 
     void Update(){
-        if (agent.enabled){
+        if (deathManager.died && !killed){
+            state = "Idle";
+            animator.CrossFade("Idle", 0.2f);
+            CancelInvoke();
+            audioSource_walk.Stop();
+            audioSource_sfx.Stop();
+            deathSound.Play();
+            music.Stop();
+            agent.enabled = false;
+            killed = true;
+        }
+        if (killed) return;
+
+        if (jumping){
+            jumpT += Time.deltaTime * 0.85f;
+            transform.position = Vector3.Lerp(jumpStart, jumpEnd, jumpT);
+        }
+
+        if (agent.enabled && state != "Hit"){
             agent.SetDestination(player.position);
             //agent.velocity = agent.desiredVelocity;
         }
@@ -68,21 +110,12 @@ public class Boss : MonoBehaviour
             Vector3 fwd = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
             transform.forward = fwd.normalized;
         }
-        if (isStaying() && state == "Run"){
+        if (Vector3.Distance(transform.position, player.position) <= hitDistance && state != "Jump" && state != "Hit"){
             int id = Random.Range(0, attackClips.Length);
             animator.CrossFade(attackClips[id].name, 0.2f);
             Invoke("HitAgain", attackClips[id].length);
             state = "Hit";
-        }
-        else if (!isStaying() && (state == "Hit" || state == "Idle")){
-            animator.CrossFade("Walk", 0.2f);
-            state = "Run";
-            CancelInvoke("HitAgain");
-        }
-
-        if (jumping){
-            jumpT += Time.deltaTime * 0.85f;
-            transform.position = Vector3.Lerp(jumpStart, jumpEnd, jumpT);
+            audioSource_walk.Stop();
         }
     }
 
@@ -94,6 +127,7 @@ public class Boss : MonoBehaviour
              CancelInvoke("HitAgain");
             agent.velocity = Vector3.zero;
             agent.enabled = false;
+            audioSource_walk.Stop();
             state = "Jump";
             jumpStart = transform.position;
             Vector3 fwd = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
@@ -106,15 +140,42 @@ public class Boss : MonoBehaviour
         }
     }
 
+    public void DIEBITCH(){
+        CancelInvoke();
+        killed = true;
+        state = "Idle";
+        animator.CrossFade("Die", 0.2f);
+        audioSource_walk.Stop();
+        audioSource_sfx.Stop();
+        deathSound_MY.Play();
+        music.Stop();
+        agent.enabled = false;
+    }
+
     public void animationEvent(int type){
         if (type == 1){
+            audioSource_sfx.clip = clipsSFX[0];
+            audioSource_sfx.Play();
+            MilkShake.Shaker.ShakeAll(shakePresetLand);
             Instantiate(hitParticles, hitParticlesPOS.position, quaternion.identity);
         }
+        else if (type == 2){
+            audioSource_walk.clip = clipsWalk[1];
+            audioSource_walk.Play();
+        }
         else if (type == 11){
+            audioSource_sfx.clip = clipsSFX[1];
+            audioSource_sfx.Play();
             LnRSword[0].Play();
         }
         else if (type == 12){
+            audioSource_sfx.clip = clipsSFX[1];
+            audioSource_sfx.Play();
             LnRSword[1].Play();
+        }
+        else if (type == 13){
+            audioSource_sfx.clip = clipsSFX[1];
+            audioSource_sfx.Play();
         }
     }
 

@@ -13,6 +13,10 @@ public class SpellCaster : MonoBehaviour
     public float _spellIndex;
 
     private Camera _camera;
+
+
+    [SerializeField] private AudioSource audioSource;
+
     private void Start()
     {
         _camera = Camera.main;
@@ -47,5 +51,9 @@ public class SpellCaster : MonoBehaviour
         var t = transform;
         // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
         spell.Cast(t.position, _camera.transform.rotation);
+
+        audioSource.clip = spell.clip;
+        audioSource.pitch = Random.Range(spell.randomPitch[0], spell.randomPitch[1]);
+        audioSource.Play();
     }
 }
