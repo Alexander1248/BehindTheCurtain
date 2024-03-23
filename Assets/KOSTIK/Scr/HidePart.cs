@@ -25,14 +25,42 @@ public class HidePart : MonoBehaviour
     [SerializeField] private AudioSource heartbeat;
     [SerializeField] private AudioSource hiding;
 
+    [SerializeField] private PlayableDirector cathCS;
+    [SerializeField] private Transform catchCSPos;
+    [SerializeField] private Vector2 catchCSRot;
+
     private bool played;
+    private int gameStage;
 
     void Start(){
         GM.SetActive(false);
-        InvokeRepeating("shakedoor", 0.65f, 0.65f);
-        Invoke("firstSay", 1);
-    }
 
+        gameStage = PlayerPrefs.GetInt("gameStage", 0);
+        gameStage = 4;
+        if (gameStage == 2){
+            // hiding from PREPOD
+            InvokeRepeating("shakedoor", 0.65f, 0.65f);
+            Invoke("firstSay", 1);
+        }
+        else if (gameStage == 4){
+            // catched by PREPOD
+            player.transform.position = catchCSPos.position;
+            player.endCS(catchCSRot);
+            hidePlaces[0].tag = "Untagged";
+            hidePlaces[1].tag = "Untagged";
+            arrows[0].SetActive(false);
+            arrows[1].SetActive(false);
+            animatorDoor.enabled = false;
+            for(int i = 0; i < audioToOffOnHide.Length; i++)
+                audioToOffOnHide[i].Stop();
+            heartbeat.Stop();
+            hidePlaces[1].GetComponent<hidePlace>().tipName = "PLAY";
+            hidePlaces[1].tag = "InteractMe";
+            // audioKashel.Play();
+            cathCS.Play();
+        }
+    }
+    
     void firstSay(){
         npcPlayer0.StartDialog();
     }
@@ -42,6 +70,9 @@ public class HidePart : MonoBehaviour
     }
 
     public void hidePlayer(int id){
+        if (gameStage == 4){
+            return;
+        }
         if (played){
             // continue
             return;
