@@ -52,7 +52,7 @@ public class Controller : MonoBehaviour
 
     // Internal Variables
     private Vector3 jointOriginalPos;
-    private float timer = 0;
+    private float timer;
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip[] footsteps;
@@ -64,7 +64,9 @@ public class Controller : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _rigidbody = GetComponent<Rigidbody>();
+        
         if (dashBar) dashBar.Initialize(dashCount);
+        _dashCount = dashCount;
     }
 
     void camControl(){
@@ -114,6 +116,23 @@ public class Controller : MonoBehaviour
         HeadBob();
     }
 
+    public void LockMovement(){
+        rb.isKinematic = true;
+        GetComponent<Collider>().enabled = false;
+        movementEnabled = false;
+        isWalking = false;
+        jumpEnabled = false;
+        dashEnabled = false;
+    }
+    public void UnlockMovement(){
+        rb.isKinematic = false;
+        GetComponent<Collider>().enabled = true;
+        movementEnabled = true;
+        isWalking = false;
+        jumpEnabled = false;
+        dashEnabled = false;
+    }
+    
     public void Cutscene(Vector2 rot){
         lockCamera = true;
         lockAngle = rot;
@@ -143,12 +162,7 @@ public class Controller : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if (!movementEnabled)
-        {
-            rb.isKinematic = true;
-            return;
-        }
-        rb.isKinematic = false;
+        if (!movementEnabled) return;
 
         Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized;
         targetVelocity = transform.TransformDirection(targetVelocity) * speed;
@@ -174,7 +188,7 @@ public class Controller : MonoBehaviour
                     if (dashBar) dashBar.Set(_dashCount);
                 }
             }
-            if (dashEnabled && _dashCount > 0 && _inJump && Input.GetKeyDown(KeyCode.LeftShift))
+            if (dashEnabled && _dashCount > 0 && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 velocityChange += targetVelocity * dashSpeed;
                 //_rigidbody.AddForce(-targetVelocity * dashSpeed, ForceMode.VelocityChange);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Feya : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class Feya : MonoBehaviour
 
     private bool seePlayer;
     [SerializeField] private float seeDistance;
+
+    [Space]
+    public GameObject castPref;
+    public AudioSource castSound;
+    [FormerlySerializedAs("chargeDistance")] public float castShift;
 
     void Start()
     {
@@ -29,6 +35,11 @@ public class Feya : MonoBehaviour
     private void Attack()
     {
         // Attack call
+        if (!seePlayer) return;
+        
+        Instantiate(castPref, transform.position - transform.forward * castShift, 
+            Quaternion.LookRotation((player.position - transform.position).normalized));
+        castSound.Play();
     }
     
     void Update()

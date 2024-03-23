@@ -23,30 +23,31 @@ public class PuzzleNPC : NPC
         {
             case 0:
                 caster.enabled = false;
-                player.movementEnabled = false;
+                player.LockMovement();
                 player.lockCamera = true;
                 player.lockMouseActive = true;
                 player.lockReturnSpeed = 0.05f;
                 
                 delta = (npc.transform.position - player.transform.position).normalized;
-                player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
+                player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z), 
+                    Mathf.Atan2(delta.y, new Vector2(delta.x, delta.z).magnitude)) * Mathf.Rad2Deg;
                 break;
             case 1:
-                
                 delta = (puzzle.transform.position - player.transform.position).normalized;
-                player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
+                player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z), 
+                    Mathf.Atan2(delta.y, new Vector2(delta.x, delta.z).magnitude)) * Mathf.Rad2Deg;
                 break;
             case 2:
-                
                 delta = (puzzle.target.transform.position - player.transform.position).normalized;
-                player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
+                player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z), 
+                    Mathf.Atan2(delta.y, new Vector2(delta.x, delta.z).magnitude)) * Mathf.Rad2Deg;
                 break;
         }
     }
 
     protected override void OnDialogEnd()
     {
-        player.movementEnabled = true;
+        player.UnlockMovement();
         player.lockCamera = false;
         caster.enabled = true;
         
