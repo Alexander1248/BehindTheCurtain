@@ -4,6 +4,7 @@ using UnityEngine;
 public class SoulArrow : Spell
 {
     public GameObject prefab;
+    public AudioSource sound;
 
     private Transform _root;
     private new void Awake()
@@ -24,5 +25,6 @@ public class SoulArrow : Spell
     {
         var dir = rotation * Vector3.forward;
         Instantiate(prefab, position + dir * 2, rotation, _root);
+        sound.Play();
     }
 }
