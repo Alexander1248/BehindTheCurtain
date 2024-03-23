@@ -11,6 +11,9 @@ public class Feya : MonoBehaviour
     [SerializeField] private float speed;
     private Vector3 offset;
 
+    private bool seePlayer;
+    [SerializeField] private float seeDistance;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -24,6 +27,15 @@ public class Feya : MonoBehaviour
 
     void Update()
     {
+        if (Vector3.Distance(transform.position, player.position) <= seeDistance){
+            seePlayer = true;
+        }
+        else if (seePlayer){
+            seePlayer = false;
+        }
+
+        if (!seePlayer) return;
+
         transform.forward = (transform.position - new Vector3(player.position.x, transform.position.y, player.position.z)).normalized;
         transform.position = Vector3.MoveTowards(transform.position, player.position + offset, speed * Time.deltaTime);
     }

@@ -54,6 +54,7 @@ public class Controller : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip[] footsteps;
+    [SerializeField] private AudioClip landingAudio;
     private bool soudReady;
 
     void Start(){
@@ -188,7 +189,7 @@ public class Controller : MonoBehaviour
         {
             timer += Time.deltaTime * bobSpeed;
             joint.localPosition = new Vector3(jointOriginalPos.x + Mathf.Sin(timer) * bobAmount.x, jointOriginalPos.y + Mathf.Sin(timer) * bobAmount.y, jointOriginalPos.z + Mathf.Sin(timer) * bobAmount.z);
-            if (Mathf.Sin(timer) < 0.3f && soudReady){
+            if (Mathf.Sin(timer) < 0.3f && soudReady && !_inJump){
                 audioSource.clip = footsteps[Random.Range(0, footsteps.Length)];
                 audioSource.Play();
                 soudReady = false;
@@ -207,6 +208,11 @@ public class Controller : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("JumpReset")) return;
+        if (!_inJump) return;
+        if (landingAudio != null){
+            audioSource.clip = landingAudio;
+            audioSource.Play();
+        }
         _inJump = false;
     }
 
