@@ -44,6 +44,7 @@ public abstract class NPC : MonoBehaviour
                 OnDialogEnd();
                 _dialogStarted = false;
                 container.enabled = false;
+                container.text = "";
                 return;
             }
             OnTextLine(_line);
@@ -61,5 +62,6 @@ public abstract class NPC : MonoBehaviour
         _printStep = true;
         OnTextLine(_line);
         container.enabled = true;
+        container.text = "";
     }
 }

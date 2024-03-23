@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Controller : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Controller : MonoBehaviour
     [Range(0f, 90f)]
     public float yRotationLimit = 88f;
 
-    public bool lockRotation;
+    [FormerlySerializedAs("lockRotation")] public bool lockCamera;
     public Vector2 lockAngle = Vector2.zero;
     
     [Min(0.01f)]
@@ -70,13 +71,19 @@ public class Controller : MonoBehaviour
                 _rotation.x += 360;
             else if (Mathf.Abs(_rotation.x - lockAngle.x) > Mathf.Abs(_rotation.x - 360 - lockAngle.x))
                 _rotation.x -= 360;
-            
+
             if (Mathf.Abs(_rotation.y - lockAngle.y) > Mathf.Abs(_rotation.y + 360 - lockAngle.y))
                 _rotation.y += 360;
             else if (Mathf.Abs(_rotation.y - lockAngle.y) > Mathf.Abs(_rotation.y - 360 - lockAngle.y))
                 _rotation.y -= 360;
 
             _rotation = Vector2.Lerp(_rotation, lockAngle, lockReturnSpeed);
+        }
+        else
+        {
+            _rotation.x += Input.GetAxis(XAxis) * sensitivity;
+            _rotation.y += Input.GetAxis(YAxis) * sensitivity;
+            _rotation.y = Mathf.Clamp(_rotation.y, -yRotationLimit, yRotationLimit);
         }
 
         camera.transform.localRotation = Quaternion.AngleAxis(_rotation.y, Vector3.left);
@@ -89,37 +96,20 @@ public class Controller : MonoBehaviour
         
         if (movementEnabled)
         {
-            var dir = Vector3.zero;
-            if (Input.GetKey(KeyCode.W))
-                dir += transform.forward;
-            if (Input.GetKey(KeyCode.S))
-                dir -= transform.forward;
-            if (Input.GetKey(KeyCode.A))
-                dir -= transform.right;
-            if (Input.GetKey(KeyCode.D))
-                dir += transform.right;
-
-            if (dashEnabled)
+            if (_dashCount > 0)
             {
-                if (_dashCount > 0)
+                _dashTime += Time.deltaTime;
+                if (_dashTime > dashCooldown)
                 {
-                    _dashTime += Time.deltaTime;
-                    if (_dashTime > dashCooldown)
-                    {
-                        _dashCount--;
-                        _dashTime = 0;
-                    }
-                }
-
-                if (_dashCount < 3 && _inJump && Input.GetKeyDown(KeyCode.LeftShift))
-                {
-                    _rigidbody.AddForce(dir * dashSpeed, ForceMode.VelocityChange);
-                    _dashCount++;
+                    _dashCount--;
+                    _dashTime = 0;
                 }
             }
 
             //transform.position += dir.normalized * (speed * Time.deltaTime);
         }
+
+        transform.position += dir.normalized * (speed * Time.deltaTime);
         
         if (!_inJump && jumpEnabled && Input.GetKey(KeyCode.Space))
         {
