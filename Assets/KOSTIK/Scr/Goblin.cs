@@ -18,6 +18,9 @@ public class Goblin : MonoBehaviour
     [SerializeField] private float maxDistJump;
     [SerializeField] private AnimationClip jumpClip;
 
+    [SerializeField] private float seeDistance;
+    private bool seePlayer = false;
+
     void Start(){
         player = GameObject.FindWithTag("Player").transform;
         agent.updateRotation = false;
@@ -41,6 +44,17 @@ public class Goblin : MonoBehaviour
     }
 
     void Update(){
+        if (Vector3.Distance(transform.position, player.position) <= seeDistance){
+            seePlayer = true;
+        }
+        else if (seePlayer){
+            seePlayer = false;
+            state = "Idle";
+            animator.CrossFade("GoblinIdle", 0.2f);
+        }
+
+        if (!seePlayer) return;
+
         if (agent.enabled){
             agent.SetDestination(player.position);
         
@@ -68,6 +82,7 @@ public class Goblin : MonoBehaviour
     }
 
     void WantJump(){
+        if (!seePlayer) return;
         float jumpChance = 1 * Vector3.Distance(transform.position, player.position) / maxDistJump;
         if (Vector3.Distance(transform.position, player.position) > maxDistJump) jumpChance = 0;
         

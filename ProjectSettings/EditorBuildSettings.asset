@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/BTC_1.unity
+    guid: e65cf795de5f3e04bb53487e9763133e
+  - enabled: 1
+    path: Assets/BTC_1_DARK.unity
+    guid: 6e512c2a5d7b77d4a9242d9eb7eddaa5
+  - enabled: 1
+    path: Assets/FOREST.unity
+    guid: 99640bbc596290746a93aee709b510ac
+  - enabled: 1
+    path: Assets/BOSS_ROOM.unity
+    guid: e56f06515d27f2a46ba00ff4d081717e
   m_configObjects: {}
