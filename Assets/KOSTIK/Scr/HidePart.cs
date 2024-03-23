@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class HidePart : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class HidePart : MonoBehaviour
     [SerializeField] private GameObject[] arrows;
     [SerializeField] private Animator animatorDoor;
     [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private PlayableDirector shelfDirector;
 
     [SerializeField] private Transform endCSPos;
     [SerializeField] private Vector2 endCSRot;
@@ -29,6 +31,9 @@ public class HidePart : MonoBehaviour
     [SerializeField] private Transform catchCSPos;
     [SerializeField] private Vector2 catchCSRot;
 
+    [SerializeField] private AudioSource audioKashel;
+    [SerializeField] private NPC npcDirector;
+
     private bool played;
     private int gameStage;
 
@@ -36,7 +41,6 @@ public class HidePart : MonoBehaviour
         GM.SetActive(false);
 
         gameStage = PlayerPrefs.GetInt("gameStage", 0);
-        gameStage = 4;
         if (gameStage == 2){
             // hiding from PREPOD
             InvokeRepeating("shakedoor", 0.65f, 0.65f);
@@ -54,11 +58,19 @@ public class HidePart : MonoBehaviour
             for(int i = 0; i < audioToOffOnHide.Length; i++)
                 audioToOffOnHide[i].Stop();
             heartbeat.Stop();
-            hidePlaces[1].GetComponent<hidePlace>().tipName = "PLAY";
-            hidePlaces[1].tag = "InteractMe";
-            // audioKashel.Play();
-            cathCS.Play();
+            Invoke("startCSCathc", 1.5f);
         }
+    }
+
+    void startCSCathc(){
+        audioKashel.Play();
+        cathCS.Play();
+    }
+
+    public void canContinueGameCatch(){
+        npcDirector.StartDialog();
+        hidePlaces[1].GetComponent<hidePlace>().tipName = "PLAY";
+        hidePlaces[1].tag = "InteractMe";
     }
     
     void firstSay(){
@@ -71,10 +83,13 @@ public class HidePart : MonoBehaviour
 
     public void hidePlayer(int id){
         if (gameStage == 4){
+            SceneManager.LoadScene(3);
             return;
         }
         if (played){
             // continue
+            PlayerPrefs.SetInt("gameStage", 6);
+            SceneManager.LoadScene(2);
             return;
         }
         hiding.Play();
@@ -90,7 +105,8 @@ public class HidePart : MonoBehaviour
         arrows[1].SetActive(false);
 
         // cut scene
-        playableDirector.Play();
+        if (id == 0) playableDirector.Play();
+        else shelfDirector.Play();
     }
 
     public void endCS(){
