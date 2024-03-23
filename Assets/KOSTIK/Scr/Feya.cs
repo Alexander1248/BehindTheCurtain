@@ -18,6 +18,7 @@ public class Feya : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         InvokeRepeating("ChangePos", 1, 2);
+        InvokeRepeating(nameof(Attack), 1, 1);
     }
     
     void ChangePos(){
@@ -25,6 +26,11 @@ public class Feya : MonoBehaviour
         offset = dir * Random.Range(minRange[0], maxRange[0]) + Vector3.up * Random.Range(minRange[1], maxRange[1]);
     }
 
+    private void Attack()
+    {
+        // Attack call
+    }
+    
     void Update()
     {
         if (Vector3.Distance(transform.position, player.position) <= seeDistance){

@@ -27,6 +27,8 @@ public class Controller : MonoBehaviour
     public float jumpSpeed = 10;
     public float dashSpeed = 30;
     public float dashCooldown = 2;
+    public int dashCount = 3;
+    public DashBar dashBar;
 
     
     [Space]
@@ -62,6 +64,7 @@ public class Controller : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _rigidbody = GetComponent<Rigidbody>();
+        if (dashBar) dashBar.Initialize(dashCount);
     }
 
     void camControl(){
@@ -161,20 +164,22 @@ public class Controller : MonoBehaviour
 
         if (movementEnabled)
         {
-            if (_dashCount > 0)
+            if (_dashCount < dashCount)
             {
                 _dashTime += Time.deltaTime;
                 if (_dashTime > dashCooldown)
                 {
-                    _dashCount--;
+                    _dashCount++;
                     _dashTime = 0;
+                    if (dashBar) dashBar.Set(_dashCount);
                 }
             }
-            if (_dashCount < 3 && _inJump && Input.GetKeyDown(KeyCode.LeftShift))
+            if (dashEnabled && _dashCount > 0 && _inJump && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 velocityChange += targetVelocity * dashSpeed;
                 //_rigidbody.AddForce(-targetVelocity * dashSpeed, ForceMode.VelocityChange);
-                _dashCount++;
+                _dashCount--;
+                if (dashBar) dashBar.Set(_dashCount);
             }
 
             //transform.position += dir.normalized * (speed * Time.deltaTime);
