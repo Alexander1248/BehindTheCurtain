@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{65d90d16-bd3c-f5de-d703-1b6e432a184b}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{d0fd7348-feeb-f02d-ad82-4e4b78ad7dee}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{769e748d-c8fb-3263-2d5d-13cb274484ae}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFXRRuntime", "CFXRRuntime.csproj", "{ef45b0f1-01c2-dcdf-e6cc-ab8aba7c0aae}"
@@ -18,6 +22,10 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65d90d16-bd3c-f5de-d703-1b6e432a184b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65d90d16-bd3c-f5de-d703-1b6e432a184b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{d0fd7348-feeb-f02d-ad82-4e4b78ad7dee}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{d0fd7348-feeb-f02d-ad82-4e4b78ad7dee}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{769e748d-c8fb-3263-2d5d-13cb274484ae}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{769e748d-c8fb-3263-2d5d-13cb274484ae}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ef45b0f1-01c2-dcdf-e6cc-ab8aba7c0aae}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
