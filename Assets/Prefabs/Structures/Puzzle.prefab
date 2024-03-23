@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2375367111213133591, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,7 +151,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 99cc68f3b9e747241b1fb4ba4d4aa3a9, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -298,7 +298,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3329647856028074494, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -511,7 +511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2375367111213133591, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -659,7 +659,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3329647856028074494, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -822,7 +822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce8329f834e4f688fce6d452f54479d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animation: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!1 &4726446834458653984
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +885,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6892232844440235036, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -967,7 +968,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7363477993353334421, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1050,7 +1051,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6892232844440235036, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1133,7 +1134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7363477993353334421, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1315,7 +1316,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3329647856028074494, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1398,7 +1399,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7363477993353334421, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1481,7 +1482,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7363477993353334421, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1564,7 +1565,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2375367111213133591, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1647,7 +1648,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6892232844440235036, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1763,7 +1764,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2375367111213133591, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1885,7 +1886,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 99cc68f3b9e747241b1fb4ba4d4aa3a9, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2032,7 +2033,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3329647856028074494, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2369,7 +2370,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6892232844440235036, guid: 914d999740a9f474abf21478b4ace3a1, type: 3}
+  - {fileID: 2100000, guid: 537bdf69297966b4a832bf82f6e64e26, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2459,7 +2460,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 99cc68f3b9e747241b1fb4ba4d4aa3a9, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
