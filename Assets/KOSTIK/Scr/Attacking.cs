@@ -13,12 +13,6 @@ public class Attacking : MonoBehaviour
     [SerializeField] private GameObject lightning;
     [SerializeField] private float speedBolt;
     [SerializeField] private float distThrow;
-    private Transform _root;
-
-    public Transform Root
-    {
-        set => _root = value;
-    }
 
     void Start(){
         //InvokeRepeating("Hit", kulakKD, kulakKD);
@@ -32,7 +26,7 @@ public class Attacking : MonoBehaviour
     }
 
     public void throwLightning(){
-        if (lightning)
+        if (lightning != null)
         {
             if (!handAnimator.enabled)
             {
@@ -54,6 +48,7 @@ public class Attacking : MonoBehaviour
                 dir = ray.origin + ray.direction * 100;
                 lightning.GetComponent<C>().getDirection(dir.normalized, speedBolt);
             }
+            lightning.GetComponent<Collider>().enabled = true;
 
             lightning.transform.forward = dir.normalized;
         }
@@ -73,7 +68,7 @@ public class Attacking : MonoBehaviour
         Invoke("SpawnLightning", timerespawn);
     }
     void SpawnLightning(){
-        lightning = Instantiate(lightningPref, lightningSpawPoint, _root);
+        lightning = Instantiate(lightningPref, lightningSpawPoint, false);
         lightning.transform.localPosition = Vector3.zero;
         lightning.transform.localEulerAngles = Vector3.zero;
     }

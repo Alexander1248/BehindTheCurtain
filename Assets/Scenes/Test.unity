@@ -321,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &101221297
 Animator:
   serializedVersion: 5
@@ -4510,6 +4510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f966298dd440b08eda7fd8c5fa5da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  maxVelocityChange: 1
   camera: {fileID: 2091720895}
   sensitivity: 4.87
   yRotationLimit: 88
@@ -4523,6 +4525,11 @@ MonoBehaviour:
   movementEnabled: 1
   jumpEnabled: 1
   dashEnabled: 1
+  joint: {fileID: 0}
+  bobSpeed: 10
+  bobAmount: {x: 0.15, y: 0.05, z: 0}
+  audioSource: {fileID: 0}
+  footsteps: []
 --- !u!114 &1836562180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5133,6 +5140,8 @@ MonoBehaviour:
       \u0438 \u044F \u043E\u0442\u043A\u0440\u043E\u044E \u0434\u0432\u0435\u0440\u044C."
     printingTime: 4
     waitTime: 1
+  audioSource: {fileID: 0}
+  pitchRange: []
   controller: {fileID: 1836562181}
   puzzle: {fileID: 1333632261}
   player: {fileID: 1836562179}

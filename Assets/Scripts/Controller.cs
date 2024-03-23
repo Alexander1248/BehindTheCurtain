@@ -64,7 +64,7 @@ public class Controller : MonoBehaviour
         _rotation.y += Input.GetAxis(YAxis) * sensitivity;
         _rotation.y = Mathf.Clamp(_rotation.y, -yRotationLimit, yRotationLimit);
 
-        if (lockRotation)
+        if (lockCamera)
         {
             // TODO: May be exists better solution?
             if (Mathf.Abs(_rotation.x - lockAngle.x) > Mathf.Abs(_rotation.x + 360 - lockAngle.x))
@@ -94,23 +94,6 @@ public class Controller : MonoBehaviour
     {
         camControl();
         
-        if (movementEnabled)
-        {
-            if (_dashCount > 0)
-            {
-                _dashTime += Time.deltaTime;
-                if (_dashTime > dashCooldown)
-                {
-                    _dashCount--;
-                    _dashTime = 0;
-                }
-            }
-
-            //transform.position += dir.normalized * (speed * Time.deltaTime);
-        }
-
-        transform.position += dir.normalized * (speed * Time.deltaTime);
-        
         if (!_inJump && jumpEnabled && Input.GetKey(KeyCode.Space))
         {
             _rigidbody.AddForce(Vector3.up * jumpSpeed, ForceMode.VelocityChange);
@@ -121,11 +104,11 @@ public class Controller : MonoBehaviour
     }
 
     public void Cutscene(Vector2 rot){
-        lockRotation = true;
+        lockCamera = true;
         lockAngle = rot;
         for(int i = 0; i < 100; i++)
             camControl();
-        lockRotation = false;
+        lockCamera = false;
         rb.isKinematic = true;
         GetComponent<Collider>().enabled = false;
         movementEnabled = false;
@@ -135,11 +118,11 @@ public class Controller : MonoBehaviour
     }
 
     public void endCS(Vector2 rot){
-        lockRotation = true;
+        lockCamera = true;
         lockAngle = rot;
         for(int i = 0; i < 100; i++)
             camControl();
-        lockRotation = false;
+        lockCamera = false;
         rb.isKinematic = false;
         GetComponent<Collider>().enabled = true;
         movementEnabled = true;
@@ -162,6 +145,27 @@ public class Controller : MonoBehaviour
         velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
         velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
         velocityChange.y = 0;
+
+        if (movementEnabled)
+        {
+            if (_dashCount > 0)
+            {
+                _dashTime += Time.deltaTime;
+                if (_dashTime > dashCooldown)
+                {
+                    _dashCount--;
+                    _dashTime = 0;
+                }
+            }
+            if (_dashCount < 3 && _inJump && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                velocityChange += targetVelocity * dashSpeed;
+                //_rigidbody.AddForce(-targetVelocity * dashSpeed, ForceMode.VelocityChange);
+                _dashCount++;
+            }
+
+            //transform.position += dir.normalized * (speed * Time.deltaTime);
+        }
 
         rb.AddForce(velocityChange, ForceMode.VelocityChange);
     }

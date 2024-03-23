@@ -11,6 +11,7 @@ public class C : MonoBehaviour
 
     public void getDirection(Vector3 dir, float speed){
         transform.SetParent(null);
+        GetComponent<Rigidbody>().isKinematic = false;
         mydir = dir;
         myspeed = speed;
         active = true;
@@ -22,6 +23,7 @@ public class C : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
+        if (other.CompareTag("Player")) return;
         GameObject parct = Instantiate(boomPref, transform.position, Quaternion.identity);
         Destroy(parct, 3);
         Destroy(gameObject);

@@ -19,6 +19,7 @@ public class SoulArrowActor : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        if(other.gameObject.CompareTag("Player")) return;
         Instantiate(collisionPref, transform.position, root.rotation, root);
         Destroy(GetComponent<Rigidbody>());
         CancelInvoke(nameof(Destroy));

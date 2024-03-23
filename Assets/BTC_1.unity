@@ -298,16 +298,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70255712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 706062bd44c54b7187094f38301ca992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cast: 1
   mana: 100
   spells:
   - {fileID: 1507573790}
   scrollSpeed: 0
+  _spellIndex: 0
 --- !u!114 &70255715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +325,7 @@ MonoBehaviour:
   camera: {fileID: 1539459378}
   sensitivity: 3
   yRotationLimit: 88
-  lockRotation: 0
+  lockCamera: 0
   lockAngle: {x: 0, y: 0}
   lockReturnSpeed: 0.1
   speed: 7
@@ -6975,6 +6975,7 @@ MonoBehaviour:
   manaCost: 1
   cooldown: 0
   prefab: {fileID: 2039331364983557222, guid: 9718e5a6b9ddcee42ac91935318e7d17, type: 3}
+  sound: {fileID: 0}
 --- !u!4 &1507573791
 Transform:
   m_ObjectHideFlags: 0
