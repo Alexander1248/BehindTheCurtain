@@ -909,7 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3237895912974861251}
   animator: {fileID: 5447230429523673748}
-  damage: 3
+  damage: 10
   kickForce: 10
   maxDistJump: 50
   jumpClip: {fileID: 7400000, guid: 54769af5e55f9ed41baaef5f2bbe54a4, type: 2}

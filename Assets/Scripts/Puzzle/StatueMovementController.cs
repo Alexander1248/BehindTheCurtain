@@ -27,7 +27,7 @@ public class StatueMovementController : MonoBehaviour
                 {
                     caster.enabled = false;
                     controller.lockMouseActive = false;
-                    controller.movementEnabled = false;
+                    controller.LockMovement();
                     _statue = obj;
                     _source = _statue.GetComponent<AudioSource>();
                     if (_source) _source.Play();
@@ -42,7 +42,7 @@ public class StatueMovementController : MonoBehaviour
             _statue = null;
             caster.enabled = true;
             controller.lockCamera = false;
-            controller.movementEnabled = true;
+            controller.UnlockMovement();
             if (_source) _source.Stop();
             return;
         }
