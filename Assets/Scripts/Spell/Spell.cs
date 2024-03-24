@@ -13,6 +13,9 @@ public abstract class Spell : MonoBehaviour
         set => _timer = value;
     }
 
+    public AudioClip clip;
+    public float[] randomPitch;
+
     protected void Awake()
     {
         _timer = cooldown;
