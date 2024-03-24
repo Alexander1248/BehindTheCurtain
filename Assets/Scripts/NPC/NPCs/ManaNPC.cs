@@ -6,6 +6,7 @@
      public SpellCaster caster;
      protected override void OnTextLine(int line)
      {
+         base.OnTextLine(line);
          if (line != 0) return;
          controller.lockCamera = true;
          controller.lockReturnSpeed = 1;
@@ -16,6 +17,7 @@
 
      protected override void OnDialogEnd()
      {
+         base.OnDialogEnd();
          controller.lockCamera = false;
          caster.SelectSpell(caster.disableIndex);
          caster.disableIndex = -1;
