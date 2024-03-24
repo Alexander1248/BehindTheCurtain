@@ -4,12 +4,13 @@ using UnityEngine;
 public class NPCTrigger : MonoBehaviour
 {
     public NPC NPC;
-    private bool _used;
+    public NPC[] NPCs;
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        if (_used) return;
         NPC.StartDialog();
+        foreach (var npc in NPCs)
+            if (npc) npc.StartDialog();
         Destroy(gameObject);
     }
 }

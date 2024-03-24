@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPC: {fileID: 4667552638117621623}
+  NPCs: []
 --- !u!1 &1072615283330076162
 GameObject:
   m_ObjectHideFlags: 0

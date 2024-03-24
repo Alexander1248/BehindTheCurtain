@@ -7,43 +7,43 @@ public class StatueMovementController : MonoBehaviour
     public Controller controller;
     public SpellCaster caster;
     [Space] 
+    public GameObject mouseContip;
     
-    private RaycastHit[] _hits = new RaycastHit[2];
+    private RaycastHit _hit;
     private GameObject _statue;
     private AudioSource _source;
-    
+
+    public bool IsOccupied { get; private set;  }
     
     private const string XAxis = "Mouse X";
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Physics.Raycast(transform.position, transform.forward, out _hit, 5);
+        if (_hit.collider != null && _hit.collider.gameObject.CompareTag("Statue"))
         {
-            var t = transform;
-            var size = Physics.RaycastNonAlloc(t.position, t.forward, _hits, 3);
-            for (int i = 0; i < size; i++)
+            mouseContip.SetActive(true);
+            caster.enabled = false;
+            if (Input.GetMouseButtonDown(0))
             {
-                GameObject obj = _hits[i].collider.gameObject;
-                if (obj.CompareTag("Statue"))
-                {
-                    caster.enabled = false;
-                    controller.lockMouseActive = false;
-                    controller.movementEnabled = false;
-                    _statue = obj;
-                    _source = _statue.GetComponent<AudioSource>();
-                    if (_source) _source.Play();
-                    return;
-                }
+                controller.lockMouseActive = false;
+                controller.LockMovement();
+                _statue = _hit.collider.gameObject;
+                _source = _statue.GetComponent<AudioSource>();
+                if (_source) _source.Play();
+                IsOccupied = true;
+                return;
             }
-            return;
         }
+        else mouseContip.SetActive(false);
 
         if (Input.GetMouseButtonUp(0))
         {
             _statue = null;
             caster.enabled = true;
             controller.lockCamera = false;
-            controller.movementEnabled = true;
+            controller.UnlockMovement();
             if (_source) _source.Stop();
+            IsOccupied = false;
             return;
         }
 
@@ -54,4 +54,6 @@ public class StatueMovementController : MonoBehaviour
         controller.lockAngle = new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
         _statue.transform.Rotate(Vector3.up, -Input.GetAxis(XAxis) * sensetivity);
     }
+    
+    
 }

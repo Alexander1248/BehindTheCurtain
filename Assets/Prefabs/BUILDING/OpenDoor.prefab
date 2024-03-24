@@ -178,6 +178,7 @@ MonoBehaviour:
   lockedMessage: LOCKED
   _tipButton: E
   _tipName: OPEN
+  _tipNameRUS: "\u041E\u0422\u041A\u0420\u042B\u0422\u042C"
   _meshesOutline:
   - {fileID: 2126123369432972241}
   audioSource: {fileID: 6643694277956332455}
@@ -258,7 +259,8 @@ AudioSource:
   m_GameObject: {fileID: 7265248750257230636}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 8fb0af87e95b7ad469485e614de844c2,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: dd2bfbc62cb46b6459d07758585ba495, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

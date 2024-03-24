@@ -60,6 +60,8 @@ public class Controller : MonoBehaviour
     private bool soudReady;
 
     void Start(){
+        sensitivity = PlayerPrefs.GetFloat("PlayerSens", 3);
+
         jointOriginalPos = joint.localPosition;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -128,9 +130,9 @@ public class Controller : MonoBehaviour
         rb.isKinematic = false;
         GetComponent<Collider>().enabled = true;
         movementEnabled = true;
-        isWalking = false;
-        jumpEnabled = false;
-        dashEnabled = false;
+        isWalking = true;
+        jumpEnabled = true;
+        dashEnabled = true;
     }
     
     public void Cutscene(Vector2 rot){

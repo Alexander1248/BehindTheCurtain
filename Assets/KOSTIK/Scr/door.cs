@@ -22,8 +22,10 @@ public class door : MonoBehaviour, IInteractable
 
     [SerializeField] private string _tipButton;
     [SerializeField] private string _tipName;
+        [SerializeField] private string _tipNameRUS;
 
     public string tipButton { get; set; }
+        public string tipNameRUS { get; set; }
     public string tipName { get; set; }
 
     [SerializeField] private MeshRenderer[] _meshesOutline;
@@ -34,7 +36,7 @@ public class door : MonoBehaviour, IInteractable
 
     void Awake()
     {
-        tipButton = _tipButton; tipName = _tipName;
+        tipButton = _tipButton; tipName = _tipName; tipNameRUS = _tipNameRUS;
     }
     void Start()
     {

@@ -76,7 +76,10 @@ public class PlayerInteract : MonoBehaviour
 
             interactableOBJ = obj;
             interactable = obj.GetComponent<IInteractable>();
-            showTip(interactable.tipButton, interactable.tipName);
+            if (PlayerPrefs.GetInt("Language", 0) == 0)
+                showTip(interactable.tipButton, interactable.tipNameRUS);
+            else
+                showTip(interactable.tipButton, interactable.tipName);
         }
         else if (Vector3.Distance(transform.position, obj.transform.position) > distInteract)
         {
