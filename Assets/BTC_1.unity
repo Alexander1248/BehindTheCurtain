@@ -618,11 +618,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706062bd44c54b7187094f38301ca992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMana: 100
   mana: 100
   spells:
   - {fileID: 1507573790}
   scrollSpeed: 0
-  _spellIndex: 0
+  bar: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &70255715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,10 +645,13 @@ MonoBehaviour:
   lockCamera: 0
   lockAngle: {x: 0, y: 0}
   lockReturnSpeed: 0.1
+  lockMouseActive: 0
   speed: 7
   jumpSpeed: 0
   dashSpeed: 0
   dashCooldown: 1000
+  dashCount: 3
+  dashBar: {fileID: 0}
   movementEnabled: 1
   jumpEnabled: 0
   dashEnabled: 0
@@ -9818,7 +9823,7 @@ MonoBehaviour:
   player: {fileID: 70255719}
   doorObj: {fileID: 280902675}
   playerPos: {fileID: 1426922297}
-  rot: {x: 180, y: 0}
+  rot: {x: -90, y: 0}
   woman: {fileID: 1862451046}
   womanNPC: {fileID: 1862451047}
   trigger: {fileID: 1935429787}
@@ -13657,8 +13662,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 1
   cooldown: 0
+  clip: {fileID: 0}
+  randomPitch: []
   prefab: {fileID: 2039331364983557222, guid: 9718e5a6b9ddcee42ac91935318e7d17, type: 3}
-  sound: {fileID: 0}
+  icon: {fileID: 0}
 --- !u!4 &1507573791
 Transform:
   m_ObjectHideFlags: 0

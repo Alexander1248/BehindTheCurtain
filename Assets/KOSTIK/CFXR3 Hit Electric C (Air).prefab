@@ -14738,6 +14738,7 @@ GameObject:
   - component: {fileID: 5840763297073854459}
   - component: {fileID: 7445901015998135439}
   - component: {fileID: 439148260564828691}
+  - component: {fileID: -2648000134614414745}
   m_Layer: 0
   m_Name: CFXR3 Hit Electric C (Air)
   m_TagString: Untagged
@@ -19747,6 +19748,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-2648000134614414745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984130893631979516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78628e804b8e51f4a97525918a93f325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2.5
+  damage: 15
 --- !u!1 &9180523494572487143
 GameObject:
   m_ObjectHideFlags: 0

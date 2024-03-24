@@ -12,11 +12,15 @@ public class Boss : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator animator;
     private Transform player;
+    private Health hpPlayer;
     private string state = "Idle";
     private bool jumping;
     private Vector3 jumpStart;
     private Vector3 jumpEnd;
     private float jumpT;
+
+    [SerializeField] private float damage;
+    [SerializeField] private float kickForce;
 
     [SerializeField] private float maxDistJump;
     [SerializeField] private float hitDistance;
@@ -47,6 +51,7 @@ public class Boss : MonoBehaviour
 
     void Start(){
         player = GameObject.FindWithTag("Player").transform;
+        hpPlayer = player.GetComponent<Health>();
         agent.updateRotation = false;
         InvokeRepeating("WantJump", 0.5f, 0.5f);
     }
@@ -141,6 +146,7 @@ public class Boss : MonoBehaviour
     }
 
     public void DIEBITCH(){
+        GetComponent<Rigidbody>().isKinematic = true;
         CancelInvoke();
         killed = true;
         state = "Idle";
@@ -176,6 +182,12 @@ public class Boss : MonoBehaviour
         else if (type == 13){
             audioSource_sfx.clip = clipsSFX[1];
             audioSource_sfx.Play();
+        }
+        else if (type == 66){
+            if (Vector3.Distance(transform.position, player.position) <= hitDistance){
+                Vector3 dirforce = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
+                hpPlayer.DealDamage(damage, dirforce.normalized * kickForce);
+            }
         }
     }
 
