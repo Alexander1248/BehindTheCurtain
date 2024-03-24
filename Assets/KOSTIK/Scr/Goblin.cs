@@ -9,11 +9,15 @@ public class Goblin : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator animator;
     private Transform player;
+    private Health plrHP;
     private string state = "Idle";
     private bool jumping;
     private Vector3 jumpStart;
     private Vector3 jumpEnd;
     private float jumpT;
+
+    [SerializeField] private float damage;
+    [SerializeField] private float kickForce;
 
     [SerializeField] private float maxDistJump;
     [SerializeField] private AnimationClip jumpClip;
@@ -29,9 +33,14 @@ public class Goblin : MonoBehaviour
     [SerializeField] private float[] randomTiming;
     [SerializeField] private float[] randomPitch;
 
+    [SerializeField] private Rigidbody rb;
+
+    private bool died;
+
     void Start(){
         Invoke("randomSounds", Random.Range(randomTiming[0], randomTiming[1]));
         player = GameObject.FindWithTag("Player").transform;
+        plrHP = player.GetComponent<Health>();
         agent.updateRotation = false;
         InvokeRepeating("WantJump", 0.5f, 0.5f);
     }
@@ -60,6 +69,7 @@ public class Goblin : MonoBehaviour
     }
 
     void Update(){
+        if (died) return;
         if (Vector3.Distance(transform.position, player.position) <= seeDistance){
             seePlayer = true;
         }
@@ -99,12 +109,13 @@ public class Goblin : MonoBehaviour
     }
 
     void HitPlayer(){
+        if (died) return;
         if (Vector3.Distance(transform.position, player.position) > fightDistance){
             animator.CrossFade("GoblinRunning", 0.2f);
             state = "Run";
             return;
         }
-
+        plrHP.DealDamage(damage, (player.position - transform.position).normalized * kickForce);
         audioSource.clip = clips[2];
         audioSource.pitch = Random.Range(randomPitch[0], randomPitch[1]);
         audioSource.Play();
@@ -118,8 +129,6 @@ public class Goblin : MonoBehaviour
         if (!seePlayer) return;
         float jumpChance = 1 * Vector3.Distance(transform.position, player.position) / maxDistJump;
         if (Vector3.Distance(transform.position, player.position) > maxDistJump) jumpChance = 0;
-
-        Debug.Log(jumpChance);
         
         if (Random.value <= jumpChance && !jumping){
             agent.velocity = Vector3.zero;
@@ -139,6 +148,15 @@ public class Goblin : MonoBehaviour
             animator.CrossFade("GoblinJump", 0.5f);
             jumping = true;
         }
+    }
+
+    public void die(){
+        if (died) return;
+        rb.isKinematic = true;
+        CancelInvoke();
+        agent.enabled = false;
+        died = true;
+        animator.CrossFade("GoblinDie", 0.2f);
     }
 
     void stopJump(){

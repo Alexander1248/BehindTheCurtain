@@ -14941,6 +14941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boomPref: {fileID: 7984130893631979516, guid: 9f89768d6dbd0be4aa56d70a44c7eb5e,
     type: 3}
+  damage: 30
 --- !u!65 &4424942245363794997
 BoxCollider:
   m_ObjectHideFlags: 0
