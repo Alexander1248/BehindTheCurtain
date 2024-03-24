@@ -7,8 +7,9 @@ public class StatueMovementController : MonoBehaviour
     public Controller controller;
     public SpellCaster caster;
     [Space] 
+    public GameObject mouseContip;
     
-    private RaycastHit[] _hits = new RaycastHit[2];
+    private RaycastHit _hit;
     private GameObject _statue;
     private AudioSource _source;
 
@@ -17,27 +18,23 @@ public class StatueMovementController : MonoBehaviour
     private const string XAxis = "Mouse X";
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Physics.Raycast(transform.position, transform.forward, out _hit, 5);
+        if (_hit.collider != null && _hit.collider.gameObject.CompareTag("Statue"))
         {
-            var t = transform;
-            var size = Physics.RaycastNonAlloc(t.position, t.forward, _hits, 3);
-            for (int i = 0; i < size; i++)
+            mouseContip.SetActive(true);
+            caster.enabled = false;
+            if (Input.GetMouseButtonDown(0))
             {
-                GameObject obj = _hits[i].collider.gameObject;
-                if (obj.CompareTag("Statue"))
-                {
-                    caster.enabled = false;
-                    controller.lockMouseActive = false;
-                    controller.LockMovement();
-                    _statue = obj;
-                    _source = _statue.GetComponent<AudioSource>();
-                    if (_source) _source.Play();
-                    IsOccupied = true;
-                    return;
-                }
+                controller.lockMouseActive = false;
+                controller.LockMovement();
+                _statue = _hit.collider.gameObject;
+                _source = _statue.GetComponent<AudioSource>();
+                if (_source) _source.Play();
+                IsOccupied = true;
+                return;
             }
-            return;
         }
+        else mouseContip.SetActive(false);
 
         if (Input.GetMouseButtonUp(0))
         {
