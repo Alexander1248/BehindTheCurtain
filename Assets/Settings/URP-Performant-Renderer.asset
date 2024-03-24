@@ -18,7 +18,8 @@ MonoBehaviour:
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
   - {fileID: 7393508216595448011}
-  m_RendererFeatureMap: cb801aee8c049b66
+  - {fileID: 7709389377473360422}
+  m_RendererFeatureMap: cb801aee8c049b66263278efca40fd6a
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -77,6 +78,33 @@ MonoBehaviour:
   settings:
     Event: 600
     blitMaterial: {fileID: 2100000, guid: a93320bc2ef4c7c41a22af5d136ec4e9, type: 2}
+    blitMaterialPassIndex: 0
+    setInverseViewMatrix: 0
+    requireDepthNormals: 0
+    srcType: 0
+    srcTextureId: _CameraColorTexture
+    srcTextureObject: {fileID: 0}
+    dstType: 0
+    dstTextureId: _BlitPassTexture
+    dstTextureObject: {fileID: 0}
+    overrideGraphicsFormat: 0
+    graphicsFormat: 4
+--- !u!114 &7709389377473360422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dea88b8bfbd93941b433ee338a4192d, type: 3}
+  m_Name: Grayscale
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    Event: 600
+    blitMaterial: {fileID: 2100000, guid: 72450024d619ab14f91c5d0527bd7daf, type: 2}
     blitMaterialPassIndex: 0
     setInverseViewMatrix: 0
     requireDepthNormals: 0

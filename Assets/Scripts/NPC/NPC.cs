@@ -23,7 +23,7 @@ public abstract class NPC : MonoBehaviour
             text = textEN;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!_dialogStarted) return;
 
