@@ -17,14 +17,30 @@ public class Goblin : MonoBehaviour
 
     [SerializeField] private float maxDistJump;
     [SerializeField] private AnimationClip jumpClip;
+    [SerializeField] private AnimationClip hitClip;
 
     [SerializeField] private float seeDistance;
     private bool seePlayer = false;
 
+    [SerializeField] private float fightDistance;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] clips;
+    [SerializeField] private float[] randomTiming;
+    [SerializeField] private float[] randomPitch;
+
     void Start(){
+        Invoke("randomSounds", Random.Range(randomTiming[0], randomTiming[1]));
         player = GameObject.FindWithTag("Player").transform;
         agent.updateRotation = false;
         InvokeRepeating("WantJump", 0.5f, 0.5f);
+    }
+
+    void randomSounds(){
+        audioSource.clip = clips[0];
+        audioSource.pitch = Random.Range(randomPitch[0], randomPitch[1]);
+        audioSource.Play();
+        Invoke("randomSounds", Random.Range(randomTiming[0], randomTiming[1]));
     }
 
     bool isStaying()
@@ -66,11 +82,12 @@ public class Goblin : MonoBehaviour
             Vector3 fwd = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
             transform.forward = fwd.normalized;
         }
-        if (isStaying() && state == "Run"){
+        if (Vector3.Distance(transform.position, player.position) <= fightDistance && state == "Run"){
             animator.CrossFade("GoblinHit", 0.2f);
             state = "Hit";
+            Invoke("HitPlayer", hitClip.length);
         }
-        else if (!isStaying() && (state == "Hit" || state == "Idle")){
+        else if (Vector3.Distance(transform.position, player.position) > fightDistance && (state == "Hit" || state == "Idle")){
             animator.CrossFade("GoblinRunning", 0.2f);
             state = "Run";
         }
@@ -81,15 +98,38 @@ public class Goblin : MonoBehaviour
         }
     }
 
+    void HitPlayer(){
+        if (Vector3.Distance(transform.position, player.position) > fightDistance){
+            animator.CrossFade("GoblinRunning", 0.2f);
+            state = "Run";
+            return;
+        }
+
+        audioSource.clip = clips[2];
+        audioSource.pitch = Random.Range(randomPitch[0], randomPitch[1]);
+        audioSource.Play();
+        CancelInvoke("randomSounds");
+        Invoke("randomSounds", Random.Range(randomTiming[0], randomTiming[1]));
+        animator.CrossFade("GoblinHit", 0.2f);
+        Invoke("HitPlayer", hitClip.length);
+    }
+
     void WantJump(){
         if (!seePlayer) return;
         float jumpChance = 1 * Vector3.Distance(transform.position, player.position) / maxDistJump;
         if (Vector3.Distance(transform.position, player.position) > maxDistJump) jumpChance = 0;
+
+        Debug.Log(jumpChance);
         
         if (Random.value <= jumpChance && !jumping){
             agent.velocity = Vector3.zero;
             agent.enabled = false;
             state = "Jump";
+            audioSource.clip = clips[1];
+            audioSource.pitch = Random.Range(randomPitch[0], randomPitch[1]);
+            audioSource.Play();
+            CancelInvoke("randomSounds");
+            Invoke("randomSounds", Random.Range(randomTiming[0], randomTiming[1]));
             jumpStart = transform.position;
             Vector3 fwd = new Vector3(player.position.x, transform.position.y, player.position.z) - transform.position;
             jumpEnd = player.position - fwd.normalized * 1;
