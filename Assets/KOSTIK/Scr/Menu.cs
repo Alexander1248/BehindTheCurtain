@@ -28,6 +28,9 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private AudioMixer audioMixer;
 
+    [SerializeField] private AudioSource audioSourceButtons;
+    [SerializeField] private AudioClip[] buttonClips;
+
     void Start(){
         defaultSize = new float[buttons.Length];
         for(int i = 0; i < buttons.Length; i++)
@@ -52,10 +55,15 @@ public class Menu : MonoBehaviour
     void Update()
     {
         camT += Time.deltaTime * speedCam;
-        cam.transform.position = startingPos + new Vector3(0, Mathf.Sin(camT), Mathf.Cos(camT)) * radiusCam;
+        Vector3 pos = startingPos + Mathf.Cos(camT) * cam.right * radiusCam;
+        pos += Mathf.Sin(camT) * Vector3.up * radiusCam;
+        cam.transform.position = pos;
     }
 
     public void hoverButton(int id){
+        audioSourceButtons.clip = buttonClips[0];
+        audioSourceButtons.pitch = Random.Range(0.7f, 1.2f);
+        audioSourceButtons.Play();
         for(int i = 0; i < buttons.Length; i++)
             buttons[i].fontSize = defaultSize[i];
         
@@ -63,7 +71,10 @@ public class Menu : MonoBehaviour
     }
 
     public void clickButton(int id){
-        buttons[id].fontSize += 20;
+        audioSourceButtons.clip = buttonClips[1];
+        audioSourceButtons.pitch = Random.Range(0.7f, 1.2f);
+        audioSourceButtons.Play();
+        buttons[id].fontSize = defaultSize[id] + 30;
         Invoke("resetButtons", 0.3f);
 
         if (id == 0){

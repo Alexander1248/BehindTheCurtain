@@ -9,6 +9,7 @@ public abstract class NPC : MonoBehaviour
     
     
     public NPCText[] text;
+    public NPCText[] textEN;
     private bool _dialogStarted;
     private int _line;
     private float _time;
@@ -16,6 +17,11 @@ public abstract class NPC : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private float[] pitchRange;
+
+    void Start(){
+        if (PlayerPrefs.GetInt("Language", 0) == 1)
+            text = textEN;
+    }
 
     private void Update()
     {
