@@ -46,7 +46,7 @@ public class DeathManager : NPC
         
     }
 
-    void Update(){
-        if (Input.GetKeyDown("p")) die();
-    }
+    // void Update(){
+    //     if (Input.GetKeyDown("p")) die();
+    // }
 }

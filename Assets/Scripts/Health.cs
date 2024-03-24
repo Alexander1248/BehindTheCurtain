@@ -67,7 +67,7 @@ public class Health : MonoBehaviour
         onDamageDeal.Invoke(_hp, maxHP);
         if (autoHeal){
             CancelInvoke("heal");
-            InvokeRepeating("heal", 4, 0.5f);
+            InvokeRepeating("heal", 10, 1);
         }
         if (_hp <= 0)
         {

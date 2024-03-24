@@ -15,8 +15,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Vector2 rotPlayer;
     [SerializeField] private GameObject invisWall;
 
-    void Start(){
-        if (PlayerPrefs.GetInt("gameStage", 0) == 6)
+    void Start()
+    {
+        var caster = player.GetComponent<SpellCaster>();
+        caster.disableIndex = PlayerPrefs.GetInt("SCDI", caster.disableIndex);
+        
+        if (PlayerPrefs.GetInt("gameStage", 0) == 6) 
             loadFromDark0();
     }
 
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     void loadDark(){
         PlayerPrefs.SetInt("gameStage", 2); 
+        PlayerPrefs.SetInt("SCDI", player.GetComponent<SpellCaster>().disableIndex); 
         SceneManager.LoadScene(1);
     }
 
@@ -49,10 +54,12 @@ public class GameManager : MonoBehaviour
 
     void loadDark2(){
         PlayerPrefs.SetInt("gameStage", 4); 
+        PlayerPrefs.SetInt("SCDI", player.GetComponent<SpellCaster>().disableIndex); 
         SceneManager.LoadScene(1);
     }
 
-    void loadFromDark0(){
+    void loadFromDark0()
+    {
         player.transform.position = playerPos.position;
         player.GetComponent<Controller>().justRotate(rotPlayer);
         invisWall.SetActive(true);

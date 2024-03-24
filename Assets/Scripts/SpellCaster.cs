@@ -11,6 +11,9 @@ public class SpellCaster : MonoBehaviour
 
     [Space] 
     public ManaBar bar;
+
+    public NPC[] manaFirstEmptyNPCs;
+    public int disableIndex;
     
     private float _spellIndex;
 
@@ -21,6 +24,12 @@ public class SpellCaster : MonoBehaviour
 
     private void Start()
     {
+        if ((int)_spellIndex == disableIndex)
+        {
+            _spellIndex++;
+            while (_spellIndex < 0) _spellIndex += spells.Length;
+            while (_spellIndex >= spells.Length) _spellIndex -= spells.Length;
+        }
         spells[(int)_spellIndex].Selected();
         mana = maxMana;
         if (bar) bar.Initialize(maxMana);
@@ -38,6 +47,14 @@ public class SpellCaster : MonoBehaviour
             while (_spellIndex < 0) _spellIndex += spells.Length;
             while (_spellIndex >= spells.Length) _spellIndex -= spells.Length;
             var curr = (int)_spellIndex;
+            if (curr == disableIndex)
+            {
+                _spellIndex += Mathf.Sign(delta);
+                while (_spellIndex < 0) _spellIndex += spells.Length;
+                while (_spellIndex >= spells.Length) _spellIndex -= spells.Length;
+                curr = (int)_spellIndex;
+            }
+            
             if (prev != curr)
             {
                 spells[prev].Deselected();
@@ -57,6 +74,12 @@ public class SpellCaster : MonoBehaviour
         var t = transform;
         // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
         spell.Cast(t.position, _camera.transform.rotation);
+        if (manaFirstEmptyNPCs != null && mana == 0)
+        {
+            foreach (var npc in manaFirstEmptyNPCs)
+                npc.StartDialog();
+            manaFirstEmptyNPCs = null;
+        }
 
         audioSource.clip = spell.clip;
         audioSource.pitch = Random.Range(spell.randomPitch[0], spell.randomPitch[1]);
@@ -67,5 +90,12 @@ public class SpellCaster : MonoBehaviour
     {
         mana = Mathf.Min(maxMana, mana + count);
         if (bar) bar.Set(mana);
+    }
+
+    public void SelectSpell(int index)
+    {
+        spells[(int)_spellIndex].Deselected();
+        _spellIndex = index;
+        spells[index].Selected();
     }
 }
