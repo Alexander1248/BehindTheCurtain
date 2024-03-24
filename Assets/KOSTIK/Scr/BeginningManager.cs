@@ -19,12 +19,12 @@ public class BeginningManager : MonoBehaviour
 
     void Start(){
         woman.SetActive(false);
+        player.GetComponent<Controller>().justRotate(rot);
         if (PlayerPrefs.GetInt("gameStage", 0) == 11){
             trigger.SetActive(false);
             table.tag = "Untagged";
             doorObj.tag = "Untagged";
             player.position = playerPos.position;
-            player.GetComponent<Controller>().justRotate(rot);
             woman.SetActive(true);
             Invoke("dialogue", 1f);
         }

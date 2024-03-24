@@ -28,8 +28,4 @@ public class BossBatle : MonoBehaviour
         PlayerPrefs.SetInt("gameStage", 11); 
         SceneManager.LoadScene(0);
     }
-
-    void Update(){
-        if (Input.GetKeyDown("l")) playerWon();
-    }
 }
