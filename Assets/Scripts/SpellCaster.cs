@@ -44,6 +44,10 @@ public class SpellCaster : MonoBehaviour
     public void Update()
     {
         if (paused) return;
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && disableIndex != 0) SelectSpell(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2) && disableIndex != 1) SelectSpell(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3) && disableIndex != 2) SelectSpell(2);
         
         var delta = Input.mouseScrollDelta.y * scrollSpeed;
         if (delta != 0)

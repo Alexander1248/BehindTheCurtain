@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dea88b8bfbd93941b433ee338a4192d, type: 3}
   m_Name: Grayscale
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     Event: 600
     blitMaterial: {fileID: 2100000, guid: 72450024d619ab14f91c5d0527bd7daf, type: 2}

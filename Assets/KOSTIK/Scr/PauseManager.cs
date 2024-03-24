@@ -40,11 +40,15 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    private float _timeScaleBuffer;
     void pause(){
         if(spellCaster != null) spellCaster.paused = true;
         //if (controller != null) controller.justRotate(new Vector2(controller.transform.localEulerAngles.y, -Camera.main.transform.localEulerAngles.x));
         if (controller != null) controller.lockCamera = true;
-        Time.timeScale = 0.015f;
+        _timeScaleBuffer = Time.timeScale;
+        if (_timeScaleBuffer > 0.015f) 
+            Time.timeScale = 0.015f;
+        
         pauseMenu.SetActive(true);
         menus[0].SetActive(true);
         menus[1].SetActive(false);
@@ -55,7 +59,7 @@ public class PauseManager : MonoBehaviour
     void unPause(){
         if(spellCaster != null) spellCaster.paused = false;
         if (controller != null) controller.lockCamera = false;
-        Time.timeScale = 1f;
+        Time.timeScale = _timeScaleBuffer;
         pauseMenu.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
