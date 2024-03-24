@@ -2,19 +2,28 @@
 
 public class SpellCaster : MonoBehaviour
 {
-    
-    public int mana = 100;
+    public int maxMana = 100;
+    public int mana;
     
     public Spell[] spells;
     [Min(0.1f)]
     public float scrollSpeed;
+
+    [Space] 
+    public ManaBar bar;
     
-    
-    public float _spellIndex;
+    private float _spellIndex;
 
     private Camera _camera;
+
+
+    [SerializeField] private AudioSource audioSource;
+
     private void Start()
     {
+        spells[(int)_spellIndex].Selected();
+        mana = maxMana;
+        if (bar) bar.Initialize(maxMana);
         _camera = Camera.main;
         if (!_camera) _camera = GetComponent<Controller>().camera;
     }
@@ -43,9 +52,20 @@ public class SpellCaster : MonoBehaviour
         if (Time.fixedTime - spell.Timer < spell.cooldown) return;
         
         mana -= spell.manaCost;
+        bar.Set(mana);
         spell.Timer = Time.fixedTime;
         var t = transform;
         // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
         spell.Cast(t.position, _camera.transform.rotation);
+
+        audioSource.clip = spell.clip;
+        audioSource.pitch = Random.Range(spell.randomPitch[0], spell.randomPitch[1]);
+        audioSource.Play();
+    }
+
+    public void RestoreCells(int count)
+    {
+        mana = Mathf.Min(maxMana, mana + count);
+        if (bar) bar.Set(mana);
     }
 }

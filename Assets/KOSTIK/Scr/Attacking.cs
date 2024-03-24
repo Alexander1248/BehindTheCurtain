@@ -15,7 +15,7 @@ public class Attacking : MonoBehaviour
     [SerializeField] private float distThrow;
 
     void Start(){
-        //InvokeRepeating("Hit", kulakKD, kulakKD);
+        InvokeRepeating("Hit", kulakKD, kulakKD);
     }
 
     void Hit(){
@@ -31,10 +31,10 @@ public class Attacking : MonoBehaviour
             if (!handAnimator.enabled)
             {
                 handAnimator.enabled = true;
-                handAnimator.Play("ThrowC", 0, 0);
+                handAnimator.Play("ThrowC2", 0, 0);
             }
 
-            handAnimator.Play("ThrowC", 0, 0);
+            handAnimator.Play("ThrowC2", 0, 0);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Vector3 dir = Vector3.zero;
