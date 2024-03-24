@@ -29,7 +29,7 @@ public class PuzzleNPC : NPC
                 player.lockReturnSpeed = 0.05f;
                 
                 delta = (npc.transform.position - player.transform.position).normalized;
-                player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z), 
+                player.lockAngle = new Vector2(Mathf.Atan2(delta.x, delta.z), 
                     Mathf.Atan2(delta.y, new Vector2(delta.x, delta.z).magnitude)) * Mathf.Rad2Deg;
                 break;
             case 1:
