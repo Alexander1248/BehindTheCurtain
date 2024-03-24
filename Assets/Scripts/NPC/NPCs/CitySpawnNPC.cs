@@ -2,7 +2,7 @@
 
 namespace NPCs
 {
-    public class CitySpawnNPC : NPC
+    public class CitySpawnNPC : SlowmoNPC
     {
         public GameObject house;
         public GameObject monsters;
@@ -11,11 +11,9 @@ namespace NPCs
         
         protected override void OnTextLine(int line)
         {
+            base.OnTextLine(line);
             switch (line)
             {
-                case 0:
-                    Time.timeScale = 0;
-                    break;
                 case 2:
                     house.SetActive(true);
                     fire.SetActive(true);
@@ -26,11 +24,6 @@ namespace NPCs
                     break;
             }
             
-        }
-
-        protected override void OnDialogEnd()
-        {
-            Time.timeScale = 1;
         }
     }
 }
