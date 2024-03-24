@@ -14870,8 +14870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78628e804b8e51f4a97525918a93f325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
-  damage: 7
+  radius: 2.5
+  damage: 15
 --- !u!1 &5112403347238810573
 GameObject:
   m_ObjectHideFlags: 0

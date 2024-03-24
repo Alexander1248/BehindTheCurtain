@@ -68,6 +68,10 @@ public class SpellCaster : MonoBehaviour
             }
         }
 
+
+
+
+
         if (!Input.GetMouseButton(0)) return;
         
         var spell = spells[(int)_spellIndex];
@@ -80,7 +84,7 @@ public class SpellCaster : MonoBehaviour
         var t = transform;
         // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
         spell.Cast(t.position, _camera.transform.rotation);
-        if (manaFirstEmptyNPCs != null && mana == 0)
+        if (PlayerPrefs.GetInt("SCDI", 0) != -1 && manaFirstEmptyNPCs != null && mana == 0)
         {
             foreach (var npc in manaFirstEmptyNPCs)
                 npc.StartDialog();

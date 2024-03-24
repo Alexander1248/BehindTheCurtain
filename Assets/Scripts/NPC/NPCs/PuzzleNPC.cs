@@ -12,6 +12,8 @@ public class PuzzleNPC : NPC
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("Language", 0) == 1)
+            text = textEN;
         foreach (var t in puzzle.statues) 
             t.transform.Rotate(Vector3.up, Random.Range(-180, 180));
     }

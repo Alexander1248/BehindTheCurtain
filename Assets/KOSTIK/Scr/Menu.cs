@@ -42,6 +42,9 @@ public class Menu : MonoBehaviour
 
         slidersText[0].text = "" + PlayerPrefs.GetFloat("PlayerVolume", 1).ToString("F1");
         sliders[0].value = PlayerPrefs.GetFloat("PlayerVolume", 1);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public static float InverseLerp(float a, float b, float value)

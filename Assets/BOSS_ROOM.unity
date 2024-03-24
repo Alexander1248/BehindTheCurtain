@@ -7187,7 +7187,7 @@ MonoBehaviour:
     type: 3}
   lightningSpawPoint: {fileID: 1993927625}
   lightning: {fileID: 665469633}
-  speedBolt: 30
+  speedBolt: 50
   distThrow: 100
 --- !u!114 &365228991
 MonoBehaviour:
@@ -12533,6 +12533,77 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 708419546}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &710983223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710983225}
+  - component: {fileID: 710983224}
+  m_Layer: 0
+  m_Name: uitranslator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &710983224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710983223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e62a3a9f600f3148b280f77a3ae5958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 4983566533800929884}
+  - {fileID: 162959496}
+  - {fileID: 1793510142}
+  - {fileID: 48874832}
+  - {fileID: 1310209564}
+  - {fileID: 1301660872}
+  - {fileID: 1876344454}
+  - {fileID: 1687231607}
+  rusVersion:
+  - 
+  - "\u041F\u0410\u0423\u0417\u0410"
+  - "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
+  - "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
+  - "\u0412\u042B\u0425\u041E\u0414"
+  - "\u0412\u042B\u0425\u041E\u0414"
+  - "\u0417\u0412\u0423\u041A"
+  - "\u0427\u0423\u0412\u0421\u0422\u0412\u0418\u0422\u0415\u041B\u042C\u041D\u041E\u0421\u0422\u042C"
+  enVersion:
+  - 
+  - PAUSED
+  - CONTINUE
+  - SETTINGS
+  - EXIT
+  - BACK
+  - Master Volume
+  - sensitivity
+--- !u!4 &710983225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710983223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -59.76922, y: 7.407834, z: 2.3394575}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711015992
 GameObject:
   m_ObjectHideFlags: 0
@@ -34281,8 +34352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47, y: 14}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -2.8, y: 14}
+  m_SizeDelta: {x: 472.23, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687231607
 MonoBehaviour:
@@ -42100,6 +42171,10 @@ MonoBehaviour:
       \u041E\u041D\u0410 \u041F\u041E\u0413\u0418\u0411\u041B\u0410"
     printingTime: 1.5
     waitTime: 3
+  textEN:
+  - text: .. AND, FIGHTING BRAVELY, SHE DIED
+    printingTime: 1.5
+    waitTime: 3
   audioSource: {fileID: 283163318}
   pitchRange:
   - 0.5
@@ -44806,3 +44881,4 @@ SceneRoots:
   - {fileID: 365228997}
   - {fileID: 1618790426}
   - {fileID: 62565504}
+  - {fileID: 710983225}

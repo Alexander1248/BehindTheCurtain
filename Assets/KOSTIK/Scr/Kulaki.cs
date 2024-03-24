@@ -27,11 +27,15 @@ public class Kulaki : Spell
     {
         icon.enabled = true;
         obj.SetActive(true);
+        animatorK.Rebind();
+        animatorK.Update(0f);
         animatorK.enabled = false;
     }
 
     public override void Deselected()
     {
+        animatorK.Rebind();
+        animatorK.Update(0f);
         icon.enabled = false;
         obj.SetActive(false);
     }

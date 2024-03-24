@@ -332,7 +332,15 @@ MonoBehaviour:
       \u0432 \u0431\u043E\u0439. "
     printingTime: 2
     waitTime: 5
-  textEN: []
+  textEN:
+  - text: Running into the forest, you came across a fairy who agreed to take you
+      to the pass, where she saw the villains
+    printingTime: 2
+    waitTime: 5
+  - text: But it turned out that the fairy led you into an ambush, and now you're
+      joining the fight. Use your magic skills!
+    printingTime: 2
+    waitTime: 5
   audioSource: {fileID: 245332838}
   pitchRange:
   - 0.5
@@ -952,6 +960,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &856154689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856154691}
+  - component: {fileID: 856154690}
+  m_Layer: 0
+  m_Name: UITranslate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &856154690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856154689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e62a3a9f600f3148b280f77a3ae5958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 635422790}
+  rusVersion:
+  - 
+  enVersion:
+  - 
+--- !u!4 &856154691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856154689}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 889.0633, y: 89.78604, z: -5.3969955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377312839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1177,21 @@ MonoBehaviour:
       \u043D\u0435 \u0443\u043A\u0440\u0430\u043B\u0438 \u0431\u044B \u0435\u0433\u043E."
     printingTime: 2
     waitTime: 5
-  textEN: []
+  textEN:
+  - text: "You are Lorua the Great, princess of a mighty kingdom of Loshna, on a
+      first sight you are just a regular aristocrat, that only knows about her elite
+      chores \u2013 feasts, banquets, dances."
+    printingTime: 2
+    waitTime: 5
+  - text: "However, from everyone\u2019s sight you have a passion in learning magic,
+      carefully, like a cat, pulling books off the shelf of magic spells"
+    printingTime: 2
+    waitTime: 5
+  - text: "You could continue to spend your leisure time like this, until one day
+      unknown people treacherously broke into the king\u2019s chambers and stole
+      him"
+    printingTime: 2
+    waitTime: 5
   audioSource: {fileID: 1377312841}
   pitchRange:
   - 0.5
@@ -1631,7 +1703,14 @@ MonoBehaviour:
       \u043D\u0430 \u0438\u0445 \u0441\u043B\u0435\u0434."
     printingTime: 2
     waitTime: 5
-  textEN: []
+  textEN:
+  - text: 'When you heard the screams, you ran out onto the balcony of your tower,
+      you saw that unknown people were running into the forest. '
+    printingTime: 2
+    waitTime: 5
+  - text: Therefore, without hesitation, you went on their trail
+    printingTime: 2
+    waitTime: 5
   audioSource: {fileID: 1837826520}
   pitchRange:
   - 0.5
@@ -1858,3 +1937,4 @@ SceneRoots:
   - {fileID: 724694642}
   - {fileID: 1660131552}
   - {fileID: 2138970511}
+  - {fileID: 856154691}

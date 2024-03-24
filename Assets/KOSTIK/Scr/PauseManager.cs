@@ -41,9 +41,9 @@ public class PauseManager : MonoBehaviour
     }
 
     void pause(){
-        spellCaster.paused = true;
-        controller.justRotate(new Vector2(controller.transform.localEulerAngles.y, -Camera.main.transform.localEulerAngles.x));
-        controller.lockCamera = true;
+        if(spellCaster != null) spellCaster.paused = true;
+        //if (controller != null) controller.justRotate(new Vector2(controller.transform.localEulerAngles.y, -Camera.main.transform.localEulerAngles.x));
+        if (controller != null) controller.lockCamera = true;
         Time.timeScale = 0.015f;
         pauseMenu.SetActive(true);
         menus[0].SetActive(true);
@@ -53,8 +53,8 @@ public class PauseManager : MonoBehaviour
     }
 
     void unPause(){
-        spellCaster.paused = false;
-        controller.lockCamera = false;
+        if(spellCaster != null) spellCaster.paused = false;
+        if (controller != null) controller.lockCamera = false;
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         Cursor.visible = false;
@@ -110,6 +110,7 @@ public class PauseManager : MonoBehaviour
             menus[1].SetActive(true);
         }
         else if (id == 2){
+            unPause();
             animationFade.Play("FadeIn", 0, 0);
             Invoke("changeScene", 3);
         }
@@ -126,7 +127,7 @@ public class PauseManager : MonoBehaviour
 
     public void changeSens(){
         float sens = Mathf.Lerp(sensRange[0], sensRange[1], sliders[1].value);
-        controller.sensitivity = sens;
+        if (controller != null) controller.sensitivity = sens;
         PlayerPrefs.SetFloat("PlayerSens", sens);
         slidersText[1].text = "" + sens.ToString("F1");
     }
