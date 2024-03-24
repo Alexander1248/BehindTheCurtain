@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Kulaki : Spell
 {
     public GameObject obj;
     public Animator animatorK;
     private bool lastWasRight;
+    public Image icon;
 
     private new void Awake()
     {
@@ -15,12 +17,14 @@ public class Kulaki : Spell
 
     public override void Selected()
     {
+        icon.enabled = true;
         obj.SetActive(true);
         animatorK.enabled = false;
     }
 
     public override void Deselected()
     {
+        icon.enabled = false;
         obj.SetActive(false);
     }
 
