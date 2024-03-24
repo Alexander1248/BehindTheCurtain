@@ -1033,8 +1033,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 18480255}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!114 &18602492 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4983566533844062995, guid: 91733022138d7fe40b12d52030b15281,
@@ -1047,7 +1045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!1001 &20140566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10111,15 +10108,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 272385066}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!95 &274063962 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 254416623365691333, guid: 91733022138d7fe40b12d52030b15281,
     type: 3}
   m_PrefabInstance: {fileID: 821804484}
   m_PrefabAsset: {fileID: 0}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!1001 &275791737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10397,8 +10391,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 281026631}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!114 &281048343 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7927755440620782508, guid: 91733022138d7fe40b12d52030b15281,
@@ -10411,7 +10403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!1 &281706951
 GameObject:
   m_ObjectHideFlags: 0
@@ -12295,11 +12286,7 @@ MonoBehaviour:
   attacking: {fileID: 1063090646}
   hand: {fileID: 239837384}
   animator: {fileID: 239837386}
-<<<<<<< HEAD
-  icon: {fileID: 0}
-=======
   icon: {fileID: 821804485}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!1001 &329454079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36025,23 +36012,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706062bd44c54b7187094f38301ca992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   maxMana: 10
   mana: 10
-=======
   maxMana: 100
   mana: 100
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
   spells:
   - {fileID: 2087029234}
   - {fileID: 1695245393}
   - {fileID: 326049662}
   scrollSpeed: 1
-<<<<<<< HEAD
-  bar: {fileID: 1983924948}
-=======
   bar: {fileID: 0}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
   audioSource: {fileID: 0}
 --- !u!114 &1063090641
 MonoBehaviour:
@@ -36069,11 +36049,7 @@ MonoBehaviour:
   dashSpeed: 1.5
   dashCooldown: 3
   dashCount: 3
-<<<<<<< HEAD
-  dashBar: {fileID: 1983924949}
-=======
   dashBar: {fileID: 0}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
   movementEnabled: 1
   jumpEnabled: 1
   dashEnabled: 1
@@ -48395,15 +48371,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1458097453}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &1458938824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7430053050328282138, guid: 91733022138d7fe40b12d52030b15281,
     type: 3}
   m_PrefabInstance: {fileID: 821804484}
   m_PrefabAsset: {fileID: 0}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!1 &1458952767
 GameObject:
   m_ObjectHideFlags: 0
@@ -55549,11 +55522,7 @@ MonoBehaviour:
   randomPitch: []
   prefab: {fileID: 5997946432569881467, guid: 302613aa7312b384f8b82ace7eeeae7a, type: 3}
   sound: {fileID: 1695245395}
-<<<<<<< HEAD
-  icon: {fileID: 0}
-=======
   icon: {fileID: 821804486}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!4 &1695245394
 Transform:
   m_ObjectHideFlags: 0
@@ -56501,11 +56470,7 @@ MonoBehaviour:
   - 0.5
   - 1.5
   controller: {fileID: 0}
-<<<<<<< HEAD
-  animatorFade: {fileID: 0}
-=======
   animatorFade: {fileID: 274063962}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
   died: 0
 --- !u!1001 &1735171244
 PrefabInstance:
@@ -57677,8 +57642,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1762372671}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!114 &1762511765 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4424884386457842349, guid: 91733022138d7fe40b12d52030b15281,
@@ -57691,7 +57654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!1001 &1763450069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68349,11 +68311,7 @@ MonoBehaviour:
   randomPitch: []
   obj: {fileID: 1925415865}
   animatorK: {fileID: 1925415867}
-<<<<<<< HEAD
-  icon: {fileID: 0}
-=======
   icon: {fileID: 821804487}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
 --- !u!4 &2087029235
 Transform:
   m_ObjectHideFlags: 0
@@ -71799,10 +71757,7 @@ SceneRoots:
   - {fileID: 917835930}
   - {fileID: 144890938}
   - {fileID: 1524761819}
-<<<<<<< HEAD
-=======
   - {fileID: 821804484}
->>>>>>> 4a76417d236af9d70d705fc1cca27e654278ee23
   - {fileID: 1383471360}
   - {fileID: 7924823135475860004}
   - {fileID: 618622072}
