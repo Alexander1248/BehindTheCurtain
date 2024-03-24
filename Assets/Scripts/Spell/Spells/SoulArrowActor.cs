@@ -21,8 +21,9 @@ public class SoulArrowActor : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         var health = other.gameObject.GetComponent<Health>();
-        if (health) health.DealDamage(damage);
-        Instantiate(collisionPref, transform.position, root.rotation, root);
+        if (health) health.DealDamage(damage, Vector3.zero);
+        Instantiate(collisionPref, transform.position, Quaternion.identity);
+        Destroy(root.gameObject);
         Destroy(GetComponent<Rigidbody>());
         CancelInvoke(nameof(Destroy));
         Invoke(nameof(Destroy), 1);

@@ -387,6 +387,8 @@ MonoBehaviour:
     type: 3}
   castSound: {fileID: 5858783115894277881}
   castShift: 2
+  particles: {fileID: 3648911045187662319, guid: e0885cc7538c7ec4fabb0ced4e4f07e3,
+    type: 3}
 --- !u!95 &7223349054885111991
 Animator:
   serializedVersion: 5
@@ -420,13 +422,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ea774768f1471d85864f3d6df7a80b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 50
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 914503617815149526}
+        m_TargetAssemblyTypeName: Feya, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDamageDeal:
     m_PersistentCalls:
       m_Calls: []
+  rb: {fileID: 0}
+  _hp: 0
+  amountRestore: 4
 --- !u!1 &2491663804212593452
 GameObject:
   m_ObjectHideFlags: 0

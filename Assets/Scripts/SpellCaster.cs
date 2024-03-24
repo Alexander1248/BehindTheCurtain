@@ -62,4 +62,10 @@ public class SpellCaster : MonoBehaviour
         audioSource.pitch = Random.Range(spell.randomPitch[0], spell.randomPitch[1]);
         audioSource.Play();
     }
+
+    public void RestoreCells(int count)
+    {
+        mana = Mathf.Min(maxMana, mana + count);
+        if (bar) bar.Set(mana);
+    }
 }

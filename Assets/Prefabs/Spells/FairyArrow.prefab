@@ -5110,8 +5110,9 @@ MonoBehaviour:
   particle: {fileID: 1124738273059693562}
   renderer: {fileID: 8533540800662996896}
   source: {fileID: 6691626890679703113}
+  damage: 10
   speed: 30
-  lifetime: 1
+  lifetime: 2
   collisionPref: {fileID: 5112403345868107898, guid: 5000cdd584a281043ae29c8b18829e53,
     type: 3}
 --- !u!1 &5997946432569881467

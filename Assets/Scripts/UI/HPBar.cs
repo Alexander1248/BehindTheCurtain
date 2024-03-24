@@ -7,7 +7,6 @@ public class HPBar : MonoBehaviour
     
     public void Set(float value, float max)
     {
-        // TODO: Этот класс лишь обертка, от него можно избавится, вставив функционал в другой класс
-        bar.fillAmount = Mathf.Min(1, value / max);
+        bar.fillAmount = Mathf.Clamp01(value / max);
     }
 }

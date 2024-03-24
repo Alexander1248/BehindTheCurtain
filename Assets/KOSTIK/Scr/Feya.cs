@@ -20,6 +20,8 @@ public class Feya : MonoBehaviour
     public AudioSource castSound;
     [FormerlySerializedAs("chargeDistance")] public float castShift;
 
+    [SerializeField] private GameObject particles;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -40,6 +42,12 @@ public class Feya : MonoBehaviour
         Instantiate(castPref, transform.position - transform.forward * castShift, 
             Quaternion.LookRotation((player.position - transform.position).normalized));
         castSound.Play();
+    }
+
+    public void Die(){
+        GameObject objsss = Instantiate(particles, transform.position, Quaternion.identity);
+        Destroy(objsss, 2);
+        Destroy(gameObject);
     }
     
     void Update()
