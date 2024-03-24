@@ -8,6 +8,7 @@ public class SoulArrowActor : MonoBehaviour
     public MeshRenderer renderer;
     public AudioSource source;
     [Space]
+    public float damage = 10;
     public float speed = 10;
     public float lifetime = 10;
     public GameObject collisionPref;
@@ -19,6 +20,8 @@ public class SoulArrowActor : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        var health = other.gameObject.GetComponent<Health>();
+        if (health) health.DealDamage(damage);
         Instantiate(collisionPref, transform.position, root.rotation, root);
         Destroy(GetComponent<Rigidbody>());
         CancelInvoke(nameof(Destroy));
