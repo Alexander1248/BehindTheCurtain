@@ -96,6 +96,7 @@ public class Menu : MonoBehaviour
     }
 
     void StartGame(){
+        PlayerPrefs.DeleteKey("SCDI");
         SceneManager.LoadScene(0);
     }
 

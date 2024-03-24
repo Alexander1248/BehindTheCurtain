@@ -11,11 +11,14 @@ public class StatuePuzzle : MonoBehaviour
     [Range(0, 1)]
     public float accurancy = 0.9f;
 
+    public StatueMovementController controller;
+
     [Space] 
     public UnityEvent onSolved;
 
     private void FixedUpdate()
     {
+        if (controller.IsOccupied) return;
         bool solved = true;
         foreach (var t in statues)
         {
@@ -25,6 +28,10 @@ public class StatuePuzzle : MonoBehaviour
                 solved = false;
         }
 
-        if (solved) onSolved.Invoke();
+        if (solved)
+        {
+            onSolved.Invoke();
+            Destroy(this);
+        }
     }
 }

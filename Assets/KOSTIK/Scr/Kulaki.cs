@@ -59,6 +59,7 @@ public class Kulaki : Spell
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.SphereCast(ray.origin - ray.direction * 1, thickness, ray.direction, out hit)) {
+            if (hit.distance > distHit) return;
             var health = hit.collider.gameObject.GetComponent<Health>();
             if (health != null) {
                 Vector3 dir = (hit.collider.gameObject.transform.position - transform.position).normalized;
