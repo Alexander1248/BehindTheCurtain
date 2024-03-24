@@ -14,10 +14,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerPos;
     [SerializeField] private Vector2 rotPlayer;
     [SerializeField] private GameObject invisWall;
+    
+    [Space]
+    [SerializeField] private GameObject house;
+    [SerializeField] private GameObject fire;
 
-    void Start(){
+    void Start()
+    {
         if (PlayerPrefs.GetInt("gameStage", 0) == 6)
+        {
             loadFromDark0();
+            house.SetActive(true);
+            fire.SetActive(true);
+            
+        }
     }
 
     public void triggerActivated(int id){
@@ -39,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     void loadDark(){
         PlayerPrefs.SetInt("gameStage", 2); 
+        PlayerPrefs.SetInt("SCDI", -1); 
         SceneManager.LoadScene(1);
     }
 
@@ -49,10 +60,12 @@ public class GameManager : MonoBehaviour
 
     void loadDark2(){
         PlayerPrefs.SetInt("gameStage", 4); 
+        PlayerPrefs.SetInt("SCDI", -1); 
         SceneManager.LoadScene(1);
     }
 
-    void loadFromDark0(){
+    void loadFromDark0()
+    {
         player.transform.position = playerPos.position;
         player.GetComponent<Controller>().justRotate(rotPlayer);
         invisWall.SetActive(true);

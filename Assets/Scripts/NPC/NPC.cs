@@ -9,6 +9,7 @@ public abstract class NPC : MonoBehaviour
     
     
     public NPCText[] text;
+    public NPCText[] textEN;
     private bool _dialogStarted;
     private int _line;
     private float _time;
@@ -17,14 +18,25 @@ public abstract class NPC : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private float[] pitchRange;
 
-    private void FixedUpdate()
+    void Start(){
+        if (PlayerPrefs.GetInt("Language", 0) == 1)
+            text = textEN;
+    }
+
+    protected virtual void Update()
     {
         if (!_dialogStarted) return;
 
-        _time += Time.fixedDeltaTime;
+        _time += Time.unscaledDeltaTime;
         if (_printStep)
         {
-            container.text = text[_line].text[..(int)(text[_line].text.Length * _time /  text[_line].printingTime)];
+            if (text[_line].text == "" || text[_line].printingTime <= 0)
+            {
+                container.text = "";
+                _printStep = false;
+                return;
+            }
+            container.text = text[_line].text[..(int)(text[_line].text.Length * Math.Min(1, _time /  text[_line].printingTime))];
             if (audioSource != null && container.text.Length % 2 == 0 && !audioSource.isPlaying){
                 audioSource.pitch = Random.Range(pitchRange[0], pitchRange[1]);
                 audioSource.Play();
@@ -52,6 +64,7 @@ public abstract class NPC : MonoBehaviour
     }
 
     protected abstract void OnTextLine(int line);
+
     protected abstract void OnDialogEnd();
 
     public void StartDialog()

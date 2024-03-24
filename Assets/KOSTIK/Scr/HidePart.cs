@@ -94,7 +94,9 @@ public class HidePart : MonoBehaviour
 
     public void canContinueGameCatch(){
         npcDirector.StartDialog();
-        hidePlaces[1].GetComponent<hidePlace>().tipName = "PLAY";
+        if (PlayerPrefs.GetInt("Language", 0) == 1)
+            hidePlaces[1].GetComponent<hidePlace>().tipName = "PLAY";
+        else hidePlaces[1].GetComponent<hidePlace>().tipNameRUS = "ИГРАТЬ";
         hidePlaces[1].tag = "InteractMe";
     }
     
@@ -152,7 +154,9 @@ public class HidePart : MonoBehaviour
         heartbeat.Stop();
         player.endCS(endCSRot);
         player.transform.position = endCSPos.position;
-        hidePlaces[1].GetComponent<hidePlace>().tipName = "PLAY";
+        if (PlayerPrefs.GetInt("Language", 0) == 1)
+            hidePlaces[1].GetComponent<hidePlace>().tipName = "PLAY";
+        else hidePlaces[1].GetComponent<hidePlace>().tipNameRUS = "ИГРАТЬ";
         hidePlaces[1].tag = "InteractMe";
 
         npcPlayer.StartDialog();
