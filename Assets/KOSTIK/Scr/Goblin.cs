@@ -100,6 +100,7 @@ public class Goblin : MonoBehaviour
         else if (Vector3.Distance(transform.position, player.position) > fightDistance && (state == "Hit" || state == "Idle")){
             animator.CrossFade("GoblinRunning", 0.2f);
             state = "Run";
+            CancelInvoke("HitPlayer");
         }
 
         if (jumping){
@@ -115,13 +116,13 @@ public class Goblin : MonoBehaviour
             state = "Run";
             return;
         }
+        animator.Play("GoblinHit", 0, 0);
         plrHP.DealDamage(damage, (player.position - transform.position).normalized * kickForce);
         audioSource.clip = clips[2];
         audioSource.pitch = Random.Range(randomPitch[0], randomPitch[1]);
         audioSource.Play();
         CancelInvoke("randomSounds");
         Invoke("randomSounds", Random.Range(randomTiming[0], randomTiming[1]));
-        animator.CrossFade("GoblinHit", 0.2f);
         Invoke("HitPlayer", hitClip.length);
     }
 
@@ -133,6 +134,7 @@ public class Goblin : MonoBehaviour
         if (Random.value <= jumpChance && !jumping){
             agent.velocity = Vector3.zero;
             agent.enabled = false;
+            CancelInvoke("HitPlayer");
             state = "Jump";
             audioSource.clip = clips[1];
             audioSource.pitch = Random.Range(randomPitch[0], randomPitch[1]);
@@ -163,6 +165,8 @@ public class Goblin : MonoBehaviour
         state = "Hit";
         jumping = false;
         agent.enabled = true;
+
         animator.CrossFade("GoblinHit", 0.5f);
+        Invoke("HitPlayer", hitClip.length);
     }
 }
