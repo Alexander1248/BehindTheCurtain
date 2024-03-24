@@ -11,6 +11,8 @@ public class Lightning : Spell
 
     public override void Selected()
     {
+        animator.Rebind();
+        animator.Update(0f);
         animator.enabled = false;
         hand.SetActive(true);
         icon.enabled = true;
@@ -18,6 +20,8 @@ public class Lightning : Spell
 
     public override void Deselected()
     {
+        animator.Rebind();
+        animator.Update(0f);
         hand.SetActive(false);
         icon.enabled = false;
     }
