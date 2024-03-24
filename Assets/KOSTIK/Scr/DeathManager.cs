@@ -36,7 +36,7 @@ public class DeathManager : NPC
             SceneManager.LoadScene(1);
         }
         else {
-            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("gameStage", -1); 
             SceneManager.LoadScene(0);
         }
     }
@@ -45,8 +45,4 @@ public class DeathManager : NPC
     {
         
     }
-
-    // void Update(){
-    //     if (Input.GetKeyDown("p")) die();
-    // }
 }
