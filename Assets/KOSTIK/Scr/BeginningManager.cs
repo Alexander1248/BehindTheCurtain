@@ -43,6 +43,6 @@ public class BeginningManager : MonoBehaviour
     }
 
     void changeScene(){
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(5);
     }
 }

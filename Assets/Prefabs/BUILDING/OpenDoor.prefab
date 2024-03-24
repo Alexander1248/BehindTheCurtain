@@ -178,6 +178,7 @@ MonoBehaviour:
   lockedMessage: LOCKED
   _tipButton: E
   _tipName: OPEN
+  _tipNameRUS: "\u041E\u0422\u041A\u0420\u042B\u0422\u042C"
   _meshesOutline:
   - {fileID: 2126123369432972241}
   audioSource: {fileID: 6643694277956332455}

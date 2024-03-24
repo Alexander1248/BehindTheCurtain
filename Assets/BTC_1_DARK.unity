@@ -1015,7 +1015,10 @@ MonoBehaviour:
   - {fileID: 1507573790}
   scrollSpeed: 0
   bar: {fileID: 0}
+  manaFirstEmptyNPCs: []
+  disableIndex: 0
   audioSource: {fileID: 0}
+  paused: 0
 --- !u!114 &70255715
 MonoBehaviour:
   m_ObjectHideFlags: 0

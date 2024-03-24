@@ -22,6 +22,8 @@ public class SpellCaster : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
+    public bool paused;
+
     private void Start()
     {
         if ((int)_spellIndex == disableIndex)
@@ -39,6 +41,8 @@ public class SpellCaster : MonoBehaviour
 
     public void Update()
     {
+        if (paused) return;
+        
         var delta = Input.mouseScrollDelta.y * scrollSpeed;
         if (delta != 0)
         {

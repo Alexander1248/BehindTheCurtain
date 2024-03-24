@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BOSS_ROOM.unity
     guid: e56f06515d27f2a46ba00ff4d081717e
+  - enabled: 1
+    path: Assets/MENU.unity
+    guid: 3dd225298276e324397da398cf39b9c3
+  - enabled: 1
+    path: Assets/STORY.unity
+    guid: d7cb6aabcd54cb8459ca8a24a5f2ae42
   m_configObjects: {}
