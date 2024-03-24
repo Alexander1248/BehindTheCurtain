@@ -56,7 +56,9 @@ public abstract class NPC : MonoBehaviour
             OnTextLine(_line);
         }
     }
+
     protected abstract void OnTextLine(int line);
+
     protected abstract void OnDialogEnd();
 
     public void StartDialog()

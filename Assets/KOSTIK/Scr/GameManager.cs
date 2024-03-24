@@ -14,14 +14,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerPos;
     [SerializeField] private Vector2 rotPlayer;
     [SerializeField] private GameObject invisWall;
+    
+    [Space]
+    [SerializeField] private GameObject house;
+    [SerializeField] private GameObject fire;
 
     void Start()
     {
-        var caster = player.GetComponent<SpellCaster>();
-        caster.disableIndex = PlayerPrefs.GetInt("SCDI", caster.disableIndex);
-        
-        if (PlayerPrefs.GetInt("gameStage", 0) == 6) 
+        if (PlayerPrefs.GetInt("gameStage", 0) == 6)
+        {
             loadFromDark0();
+            house.SetActive(true);
+            fire.SetActive(true);
+            
+        }
     }
 
     public void triggerActivated(int id){

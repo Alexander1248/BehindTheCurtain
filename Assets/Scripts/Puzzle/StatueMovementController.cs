@@ -11,7 +11,8 @@ public class StatueMovementController : MonoBehaviour
     private RaycastHit[] _hits = new RaycastHit[2];
     private GameObject _statue;
     private AudioSource _source;
-    
+
+    public bool IsOccupied { get; private set;  }
     
     private const string XAxis = "Mouse X";
     private void Update()
@@ -31,6 +32,7 @@ public class StatueMovementController : MonoBehaviour
                     _statue = obj;
                     _source = _statue.GetComponent<AudioSource>();
                     if (_source) _source.Play();
+                    IsOccupied = true;
                     return;
                 }
             }
@@ -44,6 +46,7 @@ public class StatueMovementController : MonoBehaviour
             controller.lockCamera = false;
             controller.UnlockMovement();
             if (_source) _source.Stop();
+            IsOccupied = false;
             return;
         }
 
@@ -54,4 +57,6 @@ public class StatueMovementController : MonoBehaviour
         controller.lockAngle = new Vector2(Mathf.Atan2(delta.x, delta.z) * Mathf.Rad2Deg, 0);
         _statue.transform.Rotate(Vector3.up, -Input.GetAxis(XAxis) * sensetivity);
     }
+    
+    
 }

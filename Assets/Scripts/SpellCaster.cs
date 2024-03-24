@@ -24,6 +24,8 @@ public class SpellCaster : MonoBehaviour
 
     private void Start()
     {
+        disableIndex = PlayerPrefs.GetInt("SCDI", disableIndex);
+        
         if ((int)_spellIndex == disableIndex)
         {
             _spellIndex++;

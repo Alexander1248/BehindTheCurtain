@@ -25,7 +25,7 @@ public class PuzzleNPC : NPC
                 caster.enabled = false;
                 player.LockMovement();
                 player.lockCamera = true;
-                player.lockMouseActive = true;
+                player.lockMouseActive = false;
                 player.lockReturnSpeed = 0.05f;
                 
                 delta = (npc.transform.position - player.transform.position).normalized;
@@ -38,7 +38,7 @@ public class PuzzleNPC : NPC
                     Mathf.Atan2(delta.y, new Vector2(delta.x, delta.z).magnitude)) * Mathf.Rad2Deg;
                 break;
             case 2:
-                delta = (puzzle.target.transform.position - player.transform.position).normalized;
+                delta = (npc.transform.position - player.transform.position).normalized;
                 player.lockAngle =  new Vector2(Mathf.Atan2(delta.x, delta.z), 
                     Mathf.Atan2(delta.y, new Vector2(delta.x, delta.z).magnitude)) * Mathf.Rad2Deg;
                 break;
