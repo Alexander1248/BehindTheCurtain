@@ -60,6 +60,8 @@ public class Controller : MonoBehaviour
     private bool soudReady;
 
     void Start(){
+        sensitivity = PlayerPrefs.GetFloat("PlayerSens", 3);
+
         jointOriginalPos = joint.localPosition;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
