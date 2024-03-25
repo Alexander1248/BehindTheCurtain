@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     void loadDark(){
         PlayerPrefs.SetInt("gameStage", 2); 
         PlayerPrefs.SetInt("SCDI", -1); 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     void startFade2(){
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     void loadDark2(){
         PlayerPrefs.SetInt("gameStage", 4); 
         PlayerPrefs.SetInt("SCDI", -1); 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     void loadFromDark0()

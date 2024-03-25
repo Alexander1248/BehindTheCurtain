@@ -24,6 +24,6 @@ public class StoryManager : MonoBehaviour
         stage++;
         if (stage == 1) stotyteller2.StartDialog();
         else if (stage == 2) stotyteller3.StartDialog();
-        else SceneManager.LoadScene(2);
+        else SceneManager.LoadScene(3);
     }
 }

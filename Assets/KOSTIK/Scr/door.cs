@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class door : MonoBehaviour, IInteractable
 {

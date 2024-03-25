@@ -109,12 +109,12 @@ public class HidePart : MonoBehaviour
     }
 
     void stage4(){
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     void stage2(){
         PlayerPrefs.SetInt("gameStage", 6);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void hidePlayer(int id){

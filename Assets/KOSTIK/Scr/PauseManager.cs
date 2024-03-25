@@ -41,10 +41,14 @@ public class PauseManager : MonoBehaviour
     }
 
     private float _timeScaleBuffer;
+    private bool _lockCameraBuffer;
+    private Vector2 _lockAngleBuffer;
     void pause(){
         if(spellCaster != null) spellCaster.paused = true;
         if (controller != null)
         {
+            _lockCameraBuffer = controller.lockCamera;
+            _lockAngleBuffer = controller.lockAngle;
             controller.lockCamera = true;
             var fwd = controller.camera.transform.forward;
             controller.lockAngle = new Vector2(Mathf.Atan2(fwd.x, fwd.z), 
@@ -63,7 +67,11 @@ public class PauseManager : MonoBehaviour
 
     void unPause(){
         if(spellCaster != null) spellCaster.paused = false;
-        if (controller != null) controller.lockCamera = false;
+        if (controller != null)
+        {
+            controller.lockCamera = _lockCameraBuffer;
+            controller.lockAngle = _lockAngleBuffer;
+        }
         Time.timeScale = _timeScaleBuffer;
         pauseMenu.SetActive(false);
         Cursor.visible = false;
@@ -101,7 +109,7 @@ public class PauseManager : MonoBehaviour
     }
 
     void changeScene(){
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 
     public void clickButton(int id){

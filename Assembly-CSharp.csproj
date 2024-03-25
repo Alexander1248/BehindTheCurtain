@@ -45,55 +45,84 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\NPC\NPCs\SimpleNPC.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCs\CitySpawnNPC.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansBridgeLink.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\UITranslator.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Scripts\UI\HPBar.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Feya.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCs\PuzzleNPC.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCs\ManaNPC.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\Explosion.cs" />
     <Compile Include="Assets\KOSTIK\Scr\IInteractable.cs" />
     <Compile Include="Assets\KOSTIK\Scr\C.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
     <Compile Include="Assets\Scripts\UI\DashBar.cs" />
+    <Compile Include="Assets\MilkShake\Demo\Scripts\CameraDistance.cs" />
     <Compile Include="Assets\KOSTIK\Scr\NPCPlayer.cs" />
     <Compile Include="Assets\Scripts\Spell\Spells\SoulArrowActor.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Boss.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\PauseManager.cs" />
     <Compile Include="Assets\Scripts\SpellCaster.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\DeathManager.cs" />
     <Compile Include="Assets\KOSTIK\Scr\GameManager.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCs\TargetedMonoNPC.cs" />
+    <Compile Include="Assets\MilkShake\Demo\Scripts\ToggleAudio.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\ShakeParameters.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansImporterWindow.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\ShakeResult.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansTextureProcessor.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\StoryManager.cs" />
     <Compile Include="Assets\KOSTIK\Scr\gameTrigger.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansImporter.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\ShakeInstance.cs" />
     <Compile Include="Assets\KOSTIK\Scr\HidePart.cs" />
     <Compile Include="Assets\Scripts\Spell\Spell.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\ShakePreset.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansTerrainTools.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Scripts\Puzzle\StatueMovementController.cs" />
     <Compile Include="Assets\Scripts\Puzzle\StatuePuzzle.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\ShakeType.cs" />
     <Compile Include="Assets\KOSTIK\Scr\GMBeginning.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansMeshUtils.cs" />
+    <Compile Include="Assets\MilkShake\Demo\Scripts\CameraSwitcher.cs" />
     <Compile Include="Assets\Scripts\Puzzle\FenceAnimationRunner.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\BossBatle.cs" />
     <Compile Include="Assets\KOSTIK\Scr\BeginningManager.cs" />
     <Compile Include="Assets\KOSTIK\Scr\PlayerInteract.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansUtilities.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Attacking.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\ShakeState.cs" />
     <Compile Include="Assets\Scripts\Spell\Spells\SoulArrow.cs" />
+    <Compile Include="Assets\MilkShake\Demo\Scripts\CustomShake.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\Menu.cs" />
     <Compile Include="Assets\KOSTIK\Scr\PrepodCatchNPC.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\KOSTIK\Scr\BossAnimationHELPER.cs" />
     <Compile Include="Assets\KOSTIK\Scr\hidePlace.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\UI\ManaBar.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCs\SlowmoNPC.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+    <Compile Include="Assets\MilkShake\Demo\Scripts\ShakeClicker.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansDecalTools.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\Shaker.cs" />
+    <Compile Include="Assets\MilkShake\Demo\Scripts\ShakeButton.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCTrigger.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\WomanNPC_END.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\MilkShake\Scripts\IShakeParameters.cs" />
     <Compile Include="Assets\KOSTIK\Scr\tableBeginning.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansPostProcess.cs" />
     <Compile Include="Assets\Quixel\Scripts\BridgeImporter\MegascansMatertialUtils.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC.cs" />
     <Compile Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\KOSTIK\Scr\Kulaki.cs" />
     <Compile Include="Assets\KOSTIK\Scr\Goblin.cs" />
     <Compile Include="Assets\Scripts\Spell\Spells\Lightning.cs" />
     <Compile Include="Assets\UnityPackages\JsonNetSample\JsonNetSample.cs" />
@@ -111,11 +140,16 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
+    <None Include="Assets\MilkShake\Documentation\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\MilkShake\Documentation\Simple Setup.txt" />
     <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster FREE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Vefects\Free Fire VFX URP\Shaders\SH_Vefects_VFX_URP_Heat_Haze_01.shader" />
+    <None Include="Assets\Vefects\Free Fire VFX URP\Shaders\SH_Vefects_VFX_URP_Particles_Erosion_01.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
@@ -123,6 +157,7 @@
     <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
     <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Vefects\Free Fire VFX URP\Shaders\SH_Vefects_VFX_URP_Fire_Flames_01.shader" />
     <None Include="Assets\KOSTIK\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
@@ -132,6 +167,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Graphics\Shaders\Grayscale.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -381,11 +417,11 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\PackageCache\com.unity.visualscripting@1.9.2\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Assets\UnityPackages\JsonNet\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>D:\Projects\UnityProjects\Behind The Curtain\Library\PackageCache\com.unity.visualscripting@1.9.2\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

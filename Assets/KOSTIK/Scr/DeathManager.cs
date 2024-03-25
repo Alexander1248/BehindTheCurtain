@@ -26,18 +26,18 @@ public class DeathManager : NPC
         int gameStage = PlayerPrefs.GetInt("gameStage", 0);
 
         if (gameStage < 2){
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         else if (gameStage == 6){
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         else if (gameStage == 4){ // boss fight
             PlayerPrefs.SetInt("gameStage", 22); 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         else {
             PlayerPrefs.SetInt("gameStage", -1); 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 
