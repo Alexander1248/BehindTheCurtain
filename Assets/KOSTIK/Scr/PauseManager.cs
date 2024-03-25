@@ -43,8 +43,13 @@ public class PauseManager : MonoBehaviour
     private float _timeScaleBuffer;
     void pause(){
         if(spellCaster != null) spellCaster.paused = true;
-        //if (controller != null) controller.justRotate(new Vector2(controller.transform.localEulerAngles.y, -Camera.main.transform.localEulerAngles.x));
-        if (controller != null) controller.lockCamera = true;
+        if (controller != null)
+        {
+            controller.lockCamera = true;
+            var fwd = controller.camera.transform.forward;
+            controller.lockAngle = new Vector2(Mathf.Atan2(fwd.x, fwd.z), 
+                Mathf.Atan2(fwd.y, new Vector2(fwd.x, fwd.z).magnitude)) * Mathf.Rad2Deg;
+        }
         _timeScaleBuffer = Time.timeScale;
         if (_timeScaleBuffer > 0.015f) 
             Time.timeScale = 0.015f;

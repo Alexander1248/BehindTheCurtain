@@ -31,6 +31,11 @@ public class Menu : MonoBehaviour
     [SerializeField] private AudioSource audioSourceButtons;
     [SerializeField] private AudioClip[] buttonClips;
 
+    void Awake(){
+        if (PlayerPrefs.GetInt("Language", -1) == -1)
+            PlayerPrefs.SetInt("Language", 1);
+    }
+
     void Start(){
         defaultSize = new float[buttons.Length];
         for(int i = 0; i < buttons.Length; i++)
@@ -61,6 +66,13 @@ public class Menu : MonoBehaviour
         Vector3 pos = startingPos + Mathf.Cos(camT) * cam.right * radiusCam;
         pos += Mathf.Sin(camT) * Vector3.up * radiusCam;
         cam.transform.position = pos;
+    }
+
+    public void changeLanguage(int id){
+        PlayerPrefs.SetInt("Language", id);
+        UITranslator[] alluis = GameObject.FindObjectsOfType<UITranslator>();
+        for(int i = 0; i < alluis.Length; i++)
+            alluis[i].setLanguage(PlayerPrefs.GetInt("Language", 1));
     }
 
     public void hoverButton(int id){
