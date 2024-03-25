@@ -18,7 +18,7 @@ public class WomanNPC_END : NPC
     }
 
     void changeScene(){
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 
     protected override void OnTextLine(int line)

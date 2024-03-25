@@ -26,6 +26,6 @@ public class BossBatle : MonoBehaviour
     }
     void ChangeScene(){
         PlayerPrefs.SetInt("gameStage", 11); 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
