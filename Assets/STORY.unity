@@ -697,8 +697,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c582277558c9d3b41826e56b078ff8aa, type: 2}
-  m_sharedMaterial: {fileID: -134647129575011696, guid: c582277558c9d3b41826e56b078ff8aa,
+  m_fontAsset: {fileID: 11400000, guid: f6de75c3290d046468def63c255cb24f, type: 2}
+  m_sharedMaterial: {fileID: -7008682691516810819, guid: f6de75c3290d046468def63c255cb24f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -995,6 +995,12 @@ MonoBehaviour:
   - 
   enVersion:
   - 
+  rusFont: {fileID: 11400000, guid: f6de75c3290d046468def63c255cb24f, type: 2}
+  rusFontMat: {fileID: -7008682691516810819, guid: f6de75c3290d046468def63c255cb24f,
+    type: 2}
+  enFont: {fileID: 11400000, guid: 2db6c4b477d997b4fad7d83bf3fba91d, type: 2}
+  enFontMat: {fileID: 4518555968479026129, guid: 2db6c4b477d997b4fad7d83bf3fba91d,
+    type: 2}
 --- !u!4 &856154691
 Transform:
   m_ObjectHideFlags: 0
